@@ -42,4 +42,15 @@ public class Account_info {
     public String getMemo() { return memo; }
 
     public void setMemo(String setMemo) { this.memo = memo; }
+
+    @Override
+    public String toString() {
+        return "Account_info{" +
+                "account_number='" + account_number + '\'' +
+                ", account_balance='" + account_balance + '\'' +
+                ", account_type='" + account_type + '\'' +
+                ", user_email='" + user_email + '\'' +
+                ", memo='" + memo + '\'' +
+                '}';
+    }
 }
