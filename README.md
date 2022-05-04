@@ -1,4 +1,5 @@
-# romane_robb_p0
+# romane_robb_banking_app_p0
+
 This is the repository for the first project which for me is a banking app.
 
 User Stories To Get To MVP (Minimum Viable Product)
