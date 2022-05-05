@@ -1,15 +1,10 @@
 package com.robb.banking.models;
 
 public class Account_info {
-
     private String account_number;
-
     private int account_balance;
-
     private String account_type;
-
     private String user_email;
-
     private String memo;
 
     public Account_info() { super(); }

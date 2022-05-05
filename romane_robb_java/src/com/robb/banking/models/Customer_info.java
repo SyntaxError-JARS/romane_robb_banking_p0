@@ -3,13 +3,9 @@ package com.robb.banking.models;
 public class Customer_info {
 
     private String first_name;
-
     private String last_name;
-
     private String email_address;
-
     private String userpassword;
-
     private String date_of_birth;
 
     public Customer_info(String first_name, String last_name, String email_address, String userpassword, String date_of_birth){
@@ -64,6 +60,6 @@ public class Customer_info {
                 "first_name='" + first_name + '\'' +
                 ", last_name='" + last_name + '\'' +
                 ", email_address='" + email_address + '\'' +
-                
+
     }
 }
