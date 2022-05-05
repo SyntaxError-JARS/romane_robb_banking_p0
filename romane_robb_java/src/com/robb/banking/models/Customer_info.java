@@ -60,6 +60,9 @@ public class Customer_info {
                 "first_name='" + first_name + '\'' +
                 ", last_name='" + last_name + '\'' +
                 ", email_address='" + email_address + '\'' +
+                ", userpassword='" + userpassword + '\'' +
+                ", date_of_birth='" + date_of_birth + '\'' +
+                '}';
 
     }
 }
