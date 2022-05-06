@@ -23,23 +23,23 @@ public class Customer_info {
 
     public String getFirst_name() { return first_name; }
 
-    public void setFirst_name(String first_name) { this.first_name = first_name; }
+    public static void setFirst_name(String first_name) { this.first_name = first_name; }
 
     public String getLast_name() { return last_name; }
 
-    public void setLast_name(String last_name) { this.last_name = last_name; }
+    public static void setLast_name(String last_name) { this.last_name = last_name; }
 
     public String getEmail_address () { return email_address; }
 
-    public void setEmail_address(String email_address) { this.email_address = email_address; }
+    public static void setEmail_address(String email_address) { this.email_address = email_address; }
 
     public String getUserpassword() { return userpassword; }
 
-    public void setUserpassword(String userpassword) { this.userpassword = userpassword; }
+    public static void setUserpassword(String userpassword) { this.userpassword = userpassword; }
 
     public String getDate_of_birth() { return date_of_birth; }
 
-    public void setDate_of_birth(String date_of_birth) { this.date_of_birth = date_of_birth; }
+    public static void setDate_of_birth(String date_of_birth) { this.date_of_birth = date_of_birth; }
 
     public String toFileString() {
         StringBuilder mutableString = new StringBuilder();
@@ -64,5 +64,8 @@ public class Customer_info {
                 ", date_of_birth='" + date_of_birth + '\'' +
                 '}';
 
+    }
+
+    public String getEmail() {
     }
 }

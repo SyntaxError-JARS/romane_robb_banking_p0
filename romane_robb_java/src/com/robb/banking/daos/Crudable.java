@@ -2,7 +2,7 @@ package com.robb.banking.daos;
 
 import java.io.IOException;
 
-public interface Crudable {
+public interface Crudable<T> {
 
     // Create
     T create(T newObject);

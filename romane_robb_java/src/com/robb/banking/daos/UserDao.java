@@ -3,10 +3,8 @@ package com.robb.banking.daos;
 import com.robb.banking.util.ConnectionFactory;
 import com.robb.banking.models.Customer_info;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.io.IOException;
+import java.sql.*;
 
 public class UserDao implements Crudable<Customer_info>{
 
@@ -20,14 +18,14 @@ public class UserDao implements Crudable<Customer_info>{
 
             PreparedStatement ps = conn.prepareStatement(sql);
 
-            System.out.println(newCustomer_info.getFname());
-            System.out.println(newCustomer_info.getLname());
+            System.out.println(newCustomer_info.getFirst_name());
+            System.out.println(newCustomer_info.getLast_name());
 
-            ps.setString(1, newCustomer_info.getFname());
-            ps.setString(2, newCustomer_info.getLname());
-            ps.setString(3, newCustomer_info.getEmail());
-            ps.setString(4, newCustomer_info.getPassword());
-            ps.setString(5, newCustomer_info.getDob());
+            ps.setString(1, newCustomer_info.getFirst_name());
+            ps.setString(2, newCustomer_info.getLast_name());
+            ps.setString(3, newCustomer_info.getEmail_address());
+            ps.setString(4, newCustomer_info.getUserpassword());
+            ps.setString(5, newCustomer_info.getDate_of_birth());
 
             int checkInsert = ps.executeUpdate();
 
@@ -53,16 +51,16 @@ public class UserDao implements Crudable<Customer_info>{
             String sql = "select * from user";
             Statement s = conn.createStatement();
 
-            ResultSet rs = s.executeQuery(sql);
+            ResultSet rs = ((Statement) s).executeQuery(sql);
 
             while (rs.next()) {
                 Customer_info customer_info = new Customer_info();
 
-                Customer_info.setFname(rs.getString("first_name"));
-                Customer_info.setLname(rs.getString("last_name"));
-                Customer_info.setEmail(rs.getString("email_address"));
-                Customer_info.setPassword(rs.getString("userpassword"));
-                Customer_info.setDob(rs.getString("date_of_birth"));
+                Customer_info.setFirst_name(rs.getString("first_name"));
+                Customer_info.setLast_name(rs.getString("last_name"));
+                Customer_info.setEmail_address(rs.getString("email_address"));
+                Customer_info.setUserpassword(rs.getString("userpassword"));
+                Customer_info.setDate_of_birth(rs.getString("date_of_birth"));
 
                 System.out.println("Inserted user into index" + index);
                 customer_info[index] = customer_info;
@@ -93,11 +91,11 @@ public class UserDao implements Crudable<Customer_info>{
 
             Customer_info customer_info = new Customer_info();
 
-            customer_info.setFname(rs.getString("first_name"));
-            customer_info.setLname(rs.getString("last_name"));
-            customer_info.setEmail(rs.getString("email_address"));
-            customer_info.setPassword(rs.getString("userpassword"));
-            customer_info.setDob(rs.getString("date_of_birth"));
+            customer_info.setFirst_name(rs.getString("first_name"));
+            customer_info.setLast_name(rs.getString("last_name"));
+            customer_info.setEmail_address(rs.getString("email_address"));
+            customer_info.setUserpassword(rs.getString("userpassword"));
+            customer_info.setDate_of_birth(rs.getString("date_of_birth"));
 
             return customer_info;
 

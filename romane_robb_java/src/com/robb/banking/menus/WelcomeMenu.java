@@ -4,6 +4,8 @@ import com.robb.banking.services.UserServices;
 
 import java.io.BufferedReader;
 
+import static com.robb.banking.util.AppState.shutdown;
+
 public class WelcomeMenu extends Menu {
 
     private UserServices userServices;

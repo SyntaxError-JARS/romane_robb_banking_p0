@@ -5,6 +5,7 @@ import com.robb.banking.menus.WelcomeMenu;
 import com.robb.banking.services.UserServices;
 
 import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 public class AppState {
 
@@ -40,4 +41,6 @@ public class AppState {
         System.out.println("Application shutting down...");
     }
 
+    public void Startup() {
+    }
 }
