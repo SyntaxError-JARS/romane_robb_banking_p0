@@ -1,18 +1,20 @@
 package com.robb.banking.menus;
 
 import com.robb.banking.services.UserServices;
-
 import java.io.BufferedReader;
-
 import static com.robb.banking.util.AppState.shutdown;
+import com.robb.banking.util.logging.Logger;
 
 public class WelcomeMenu extends Menu {
 
     private UserServices userServices;
 
-    public WelcomeMenu(BufferedReader terminalReader, UserServices userServices) {
+    private final Logger logger;
+
+    public WelcomeMenu(BufferedReader terminalReader, UserServices userServices, Logger logger) {
         super("Welcome", "/welcome", terminalReader);
         this.userServices = userServices;
+        this.logger = logger;
     }
 
     @Override
@@ -43,11 +45,12 @@ public class WelcomeMenu extends Menu {
                 break;
             case "4":
                 System.out.println("User has selected to view all transactions...");
-                userServices.readUsers();
+                userServices.readCustomer_info();
                 break;
             case "5":
                 System.out.println("User has selected exit...");
                 shutdown();
+                logger.info("Application shutting down");
                 break;
             default:
                 System.out.println("Sorry! No valid user input provided.");

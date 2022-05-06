@@ -14,7 +14,8 @@ public class Customer_info {
 
 
 // The use of "this" is referring to the current object. We do this to eliminate confusion between class attributes and parameters of the same name.
-// The use of super is to access the parent class constructor (a special method that is used to initialize objects). Super utilizes inheritance in regard to Object-oriented programming (OOP).
+// The use of super is to access the parent class constructor (a special method that is used to initialize objects).
+// Super is utilizing inheritance in regard to Object-oriented programming (OOP).
 // () is used to call the specific method it is next to.
     public Customer_info(String first_name, String last_name, String email_address, String userpassword, String date_of_birth) {
         super();
@@ -26,7 +27,6 @@ public class Customer_info {
     }
 
     public Customer_info() {
-
     }
 
     public String getFirst_name() {
@@ -73,8 +73,8 @@ public class Customer_info {
     }
 
 // the Stringbuilder class is used to modify the variables in purple.
-// .append is used to
-//
+// .append is used to change the value to the current sequence.
+// append is a StringBuilder and StringBuffer class method.
 //
     public String toFileString() {
         StringBuilder mutableString = new StringBuilder();

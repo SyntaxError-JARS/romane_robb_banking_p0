@@ -3,14 +3,16 @@ package com.robb.banking.menus;
 import com.robb.banking.exceptions.InvalidRequestException;
 import com.robb.banking.exceptions.ResourcePersistanceException;
 import com.robb.banking.services.UserServices;
-
 import com.robb.banking.models.Customer_info;
+import com.robb.banking.util.logging.Logger;
 
 import java.io.BufferedReader;
 
 public class RegisterMenu extends Menu {
 
     private UserServices userServices = new UserServices();
+
+    private final Logger logger = Logger.getLogger(false);
 
     public RegisterMenu(BufferedReader terminalReader) {
         super("Register", "/register", terminalReader);
@@ -38,7 +40,7 @@ public class RegisterMenu extends Menu {
         String lname = nameArray[1];
 
         if (!password.equals(passwordCheck)) {
-            System.out.println("Passwords don't match");
+            System.out.println("Passwords do not match! Please try again");
             return;
         }
 
@@ -48,7 +50,7 @@ public class RegisterMenu extends Menu {
         try {
             userServices.registerCustomer_info(newCustomer_info);
         } catch (InvalidRequestException | ResourcePersistanceException e) {
-            System.out.println();
+            logger.warn(e.getMessage());
         }
     }
 }

@@ -12,6 +12,11 @@ public class Account_info {
 
     public Account_info() { super(); }
 
+// The use of "this" is referring to the current object. We do this to eliminate confusion between class attributes and parameters of the same name.
+// The use of super is to access the parent class constructor (a special method that is used to initialize objects).
+// Super is utilizing inheritance in regard to Object-oriented programming (OOP).
+// () is used to call the specific method it is next to.
+
     public Account_info(String account_number, int account_balance, String account_type, String user_email, String memo){
         super();
         this.account_number = account_number;

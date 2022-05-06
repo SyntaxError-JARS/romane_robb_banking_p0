@@ -75,7 +75,4 @@ public class UserServices {
         if(newCustomer_info.getUserpassword() == null || newCustomer_info.getUserpassword().trim().equals("")) return false;
         return newCustomer_info.getDate_of_birth() != null || !newCustomer_info.getDate_of_birth().trim().equals("");
     }
-
-    public void readUsers() {
-    }
 }

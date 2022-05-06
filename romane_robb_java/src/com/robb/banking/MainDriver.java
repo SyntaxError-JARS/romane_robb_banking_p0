@@ -12,8 +12,6 @@ import java.io.*;
 // The use of the public class is to make the Customer_info class accessible and visible to all other classes.
 public class MainDriver {
 
-    static BufferedReader terminalReader = new BufferedReader(new InputStreamReader(System.in));
-
     // public makes the class accessible and visible to all other classes.
     // static means that the method belongs to the Main class and not an object of the Main class.
     // void means that this method does not have a return value.
@@ -29,7 +27,7 @@ public class MainDriver {
         AppState appState = new AppState();
 
         System.out.println("Robb's Banking Application starting up...");
-        appState.Startup();
+        appState.startup();
 
     }
 }
