@@ -1,10 +1,8 @@
 package com.robb.banking.util;
 
-import
-
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.Properties; ...
+import java.util.Properties;
 public class ConnectionFactory {
 
     private static final ConnectionFactory connectionFactory = new ConnectionFactory();
@@ -13,7 +11,7 @@ public class ConnectionFactory {
 
     private ConnectionFactory(){
         try {
-            prop.load(new FileReader("resources/db.properties"));
+            prop.load(new FileReader("src/main/resources/db.properties"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -35,9 +33,9 @@ public class ConnectionFactory {
 
         // This properties files helps obfuscate the information for connecting out our database.
 
-        url=jdbc:postgresql://localhost:5432/postgres?currentSchema=romane_robb_p0;
-        user=postgres;
-        password=4383369yo;
+        String url = "jdbc:postgresql://localhost:5432/postgres?currentSchema=romane_robb_p0";
+        String user = "postgres";
+        String password = "4383369yo";
 
         try {
             conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("user"), prop.getProperty("password"));
