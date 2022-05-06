@@ -22,21 +22,22 @@ public class Logger {
         return logger;
     }
 
-    public void log(String message){
+    public void log(String message) {
 
-       try (Writer logWriter = new FileWriter("src/main.resources/pokedex.log", true);){
-           logWriter.write(LocalDateTime.now().toString() + "LOG: " + message + "\n");
+        try (Writer logWriter = new FileWriter("src/main.resources/banking.log", true);) {
+            logWriter.write(LocalDateTime.now().toString() + "LOG: " + message + "\n");
 
-           if(printToConsole){
-               System.out.println(LocalDateTime.now().toString() + "LOG: " + message);
-           }
+            if (printToConsole) {
+                System.out.println(LocalDateTime.now().toString() + "LOG: " + message);
+            }
 
-       } catch (IOException e){
-           e.printStackTrace();
-       }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void info(String message){
-       try (Writer logWriter = new FileWriter("src/main.resources/pokedex.log", true);){
+       try (Writer logWriter = new FileWriter("src/main.resources/banking.log", true);){
              logWriter.write(LocalDateTime.now().toString() + "INFO: " + message + "\n");
 
               if(printToConsole){
@@ -49,11 +50,10 @@ public class Logger {
 
         }
 
-    }
 
     public void debug(String message){
 
-        try (Writer logWriter = new FileWriter("src/main.resources/pokedex.log", true);){
+        try (Writer logWriter = new FileWriter("src/main.resources/banking.log", true);){
             logWriter.write(LocalDateTime.now().toString() + "DEBUG: " + message + "\n");
 
             if(printToConsole){
@@ -66,7 +66,7 @@ public class Logger {
     }
 
     public void warn(String message){
-        try (Writer logWriter = new FileWriter("src/main.resources/pokedex.log", true);){
+        try (Writer logWriter = new FileWriter("src/main.resources/banking.log", true);){
             logWriter.write(LocalDateTime.now().toString() + "WARN: " + message + "\n");
 
             if(printToConsole){

@@ -15,7 +15,6 @@ public interface Crudable<T> {
     public boolean update(T updatedObj);
 
     // Delete
-
     boolean delete(String id);
 
 }

@@ -73,7 +73,7 @@ public class UserServices {
         if(newCustomer_info.getLast_name() == null || newCustomer_info.getLast_name().trim().equals("")) return false;
         if(newCustomer_info.getEmail_address() == null || newCustomer_info.getEmail_address().trim().equals("")) return false;
         if(newCustomer_info.getUserpassword() == null || newCustomer_info.getUserpassword().trim().equals("")) return false;
-        if(newCustomer_info.getDate_of_birth() == null || newCustomer_info.getDate_of_birth().trim().equals("")) return false;
+        return newCustomer_info.getDate_of_birth() != null || !newCustomer_info.getDate_of_birth().trim().equals("");
     }
 
     public void readUsers() {

@@ -5,6 +5,7 @@ import com.robb.banking.models.Customer_info;
 
 import java.io.IOException;
 import java.sql.*;
+import java.io.*;
 
 public class UserDao implements Crudable<Customer_info>{
 
@@ -14,7 +15,7 @@ public class UserDao implements Crudable<Customer_info>{
 
         try(Connection conn = ConnectionFactory.getInstance().getConnection();) {
 
-            String sql = "insert into customer_info (fname, lname, email, password, dob) values (?, ?, ?, ?, ?)";
+            String sql = "insert into customer_info (first_name, last_name, email_address, userpassword, date_of_birth) values (?, ?, ?, ?, ?)";
 
             PreparedStatement ps = conn.prepareStatement(sql);
 
@@ -43,7 +44,9 @@ public class UserDao implements Crudable<Customer_info>{
 
     @Override
     public Customer_info[] findAll() throws IOException {
-        Customer_info[] customer_info = new Customer_info[10];
+
+        Customer_info[] customer_infos = new Customer_info[10];
+
         int index = 0;
 
         try (Connection conn = ConnectionFactory.getInstance().getConnection();) {
@@ -56,14 +59,14 @@ public class UserDao implements Crudable<Customer_info>{
             while (rs.next()) {
                 Customer_info customer_info = new Customer_info();
 
-                Customer_info.setFirst_name(rs.getString("first_name"));
-                Customer_info.setLast_name(rs.getString("last_name"));
-                Customer_info.setEmail_address(rs.getString("email_address"));
-                Customer_info.setUserpassword(rs.getString("userpassword"));
-                Customer_info.setDate_of_birth(rs.getString("date_of_birth"));
+                customer_info.setFirst_name(rs.getString("first_name"));
+                customer_info.setLast_name(rs.getString("last_name"));
+                customer_info.setEmail_address(rs.getString("email_address"));
+                customer_info.setUserpassword(rs.getString("userpassword"));
+                customer_info.setDate_of_birth(rs.getString("date_of_birth"));
 
                 System.out.println("Inserted user into index" + index);
-                customer_info[index] = customer_info;
+                customer_infos[index] = customer_info;
                 index++;
                 System.out.println("Going to the next line for our following index.");
             }
@@ -73,7 +76,7 @@ public class UserDao implements Crudable<Customer_info>{
         }
 
         System.out.println("Returning customer information to user.");
-        return customer_info;
+        return customer_infos;
     }
 
     @Override
@@ -112,6 +115,6 @@ public class UserDao implements Crudable<Customer_info>{
     public boolean delete(String id) { return false; }
 
     public void checkEmail(String email) {
-        String sql = "select email from user where email = " + email;
+        String sql = "select email from user where email_address = " + email;
     }
 }
