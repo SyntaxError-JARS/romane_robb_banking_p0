@@ -1,16 +1,20 @@
 package com.robb.banking.menus;
 
+import com.robb.banking.exceptions.InvalidRequestException;
+import com.robb.banking.exceptions.ResourcePersistanceException;
 import com.robb.banking.services.UserServices;
 
 import com.robb.banking.models.Customer_info;
 
 import java.io.BufferedReader;
 
-public class RegisterMenu extends Menu{
+public class RegisterMenu extends Menu {
 
     private UserServices userServices = new UserServices();
 
-    public RegisterMenu(BufferedReader terminalReader) { super("Register", "/register", terminalReader); }
+    public RegisterMenu(BufferedReader terminalReader) {
+        super("Register", "/register", terminalReader);
+    }
 
     @Override
     public void render() throws Exception {
@@ -39,7 +43,12 @@ public class RegisterMenu extends Menu{
         }
 
         Customer_info newCustomer_info = new Customer_info(fname, lname, email, password, dob);
-        System.out.println ("Here is the information that was provided by the user: " + newCustomer_info);
-        userServices.registerCustomer_info(newCustomer_info);
+        System.out.println("Here is the information that was provided by the user: " + newCustomer_info);
+
+        try {
+            userServices.registerCustomer_info(newCustomer_info);
+        } catch (InvalidRequestException | ResourcePersistanceException e) {
+            System.out.println();
+        }
     }
 }

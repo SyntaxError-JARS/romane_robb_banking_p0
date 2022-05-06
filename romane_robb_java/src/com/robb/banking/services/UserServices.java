@@ -1,9 +1,11 @@
 package com.robb.banking.services;
 
 import com.robb.banking.daos.UserDao;
+import com.robb.banking.exceptions.InvalidRequestException;
 import com.robb.banking.models.Customer_info;
 
 import java.io.IOException;
+import java.io.InvalidClassException;
 
 public class UserServices {
 
@@ -54,11 +56,11 @@ public class UserServices {
             throw new RuntimeException();
         }
 
-        validateEmailNotUsed(newCustomer_info.getEmail());
+        validateEmailNotUsed(newCustomer_info.getEmail_address());
 
         boolean persistedCustomer_info = false;
         if(persistedCustomer_info = Boolean.parseBoolean(null)){
-            throw new RuntimeException();
+            throw new InvalidRequestException("User input was not validated. It either contained an empty string or no value.");
         }
         System.out.println("Customer has been persisted: " + newCustomer_info);
         return true;
