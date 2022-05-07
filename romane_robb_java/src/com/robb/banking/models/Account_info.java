@@ -2,6 +2,8 @@
 
 package com.robb.banking.models;
 
+import java.io.IOException;
+
 // The use of the public class is to make the Account_info class accessible and visible to all other classes.
 public class Account_info {
     private String account_number;

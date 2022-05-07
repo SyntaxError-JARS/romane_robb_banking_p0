@@ -5,8 +5,8 @@ import com.robb.banking.exceptions.ResourcePersistanceException;
 import com.robb.banking.services.UserServices;
 import com.robb.banking.models.Customer_info;
 import com.robb.banking.util.logging.Logger;
-
 import java.io.BufferedReader;
+import java.io.IOException;
 
 public class RegisterMenu extends Menu {
 

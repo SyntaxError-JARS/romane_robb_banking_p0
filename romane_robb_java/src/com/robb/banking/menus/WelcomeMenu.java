@@ -4,6 +4,7 @@ import com.robb.banking.services.UserServices;
 import java.io.BufferedReader;
 import static com.robb.banking.util.AppState.shutdown;
 import com.robb.banking.util.logging.Logger;
+import java.io.IOException;
 
 public class WelcomeMenu extends Menu {
 
