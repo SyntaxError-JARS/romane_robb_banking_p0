@@ -2,7 +2,7 @@
 
 package com.robb.banking;
 
-// The use of the import keyword is the import a package, class, or interface.
+// The use of the import keyword is the import a package, class, or interface to be utilized belows.
 
 import com.robb.banking.util.AppState;
 import com.robb.banking.models.Customer_info;

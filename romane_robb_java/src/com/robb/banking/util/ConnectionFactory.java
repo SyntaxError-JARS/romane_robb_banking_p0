@@ -34,7 +34,7 @@ public class ConnectionFactory {
 
         Connection conn = null;
 
-        // This properties files helps obfuscate the information for connecting out our database.
+        // These information below helps to connect to our database.
 
         String url = "jdbc:postgresql://localhost:5432/postgres?currentSchema=romane_robb_p0";
         String user = "postgres";
