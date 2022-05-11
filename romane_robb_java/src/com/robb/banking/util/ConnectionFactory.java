@@ -36,9 +36,9 @@ public class ConnectionFactory {
 
         // These information below helps to connect to our database.
 
-        String url = "jdbc:postgresql://localhost:5432/postgres?currentSchema=romane_robb_p0";
-        String user = "postgres";
-        String password = "4383369yo";
+       // String url = "jdbc:postgresql://localhost:5432/postgres?currentSchema=romane_robb_p0";
+        // String user = "postgres";
+        // String password = "4383369yo";
 
         try {
             conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("user"), prop.getProperty("password"));

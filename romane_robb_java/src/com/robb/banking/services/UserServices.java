@@ -4,6 +4,7 @@ import com.robb.banking.daos.UserDao;
 import com.robb.banking.exceptions.InvalidRequestException;
 import com.robb.banking.models.Customer_info;
 
+import javax.naming.AuthenticationException;
 import java.io.IOException;
 import java.io.InvalidClassException;
 
@@ -45,8 +46,7 @@ public class UserServices {
     }
 
     public boolean validateEmailNotUsed(String email){
-        userDao.checkEmail(email);
-        return false;
+        return userDao.checkEmail(email);
     }
 
     public boolean registerCustomer_info(Customer_info newCustomer_info){
@@ -74,5 +74,21 @@ public class UserServices {
         if(newCustomer_info.getEmail_address() == null || newCustomer_info.getEmail_address().trim().equals("")) return false;
         if(newCustomer_info.getUserpassword() == null || newCustomer_info.getUserpassword().trim().equals("")) return false;
         return newCustomer_info.getDate_of_birth() != null || !newCustomer_info.getDate_of_birth().trim().equals("");
+    }
+
+    public Customer_info authenticateCustomer_info(String email, String password) throws AuthenticationException {
+
+        if(password == null || password.trim().equals("") || password == null || password.trim().equals("")) {
+            throw new InvalidRequestException("Either the username or the password is an invalid entry. Please try logging in again.");
+        }
+
+        Customer_info authenticatedCustomer_info = userDao.authenticateCustomer_info(email, password);
+
+        if (authenticatedCustomer_info == null){
+            throw new AuthenticationException("Unauthenticated user. The information provided was not consistent with our database.");
+        }
+
+        return authenticatedCustomer_info;
+
     }
 }
