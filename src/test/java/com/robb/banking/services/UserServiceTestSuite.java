@@ -1,5 +1,6 @@
 package com.robb.banking.services;
 
+import com.robb.banking.daos.UserDao;
 import com.robb.banking.models.Customer_info;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,7 +13,7 @@ public class UserServiceTestSuite {
 
     @BeforeEach
     public void testPrep(){
-        sut = new UserServices(new UserServices());
+        sut = new UserServices(new UserDao());
     }
 
     @Test
