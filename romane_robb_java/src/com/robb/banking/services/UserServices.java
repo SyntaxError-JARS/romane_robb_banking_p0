@@ -2,71 +2,60 @@ package com.robb.banking.services;
 
 import com.robb.banking.daos.UserDao;
 import com.robb.banking.exceptions.InvalidRequestException;
+import com.robb.banking.exceptions.ResourcePersistanceException;
 import com.robb.banking.models.Customer_info;
+import com.robb.banking.util.logging.Logger;
 
 import javax.naming.AuthenticationException;
 import java.io.IOException;
 import java.io.InvalidClassException;
 
-public class UserServices {
+public class UserServices implements Serviceable<Customer_info>{
 
-    private UserDao userDao = new UserDao();
+    private UserDao userDao;
 
-    public void readCustomer_info(){
-        System.out.println("Start reading Users in our file database.");
-        Customer_info[] customer_info;
+    private Logger logger = Logger.getLogger();
+
+    public Customer_info[] readAll(){
+        logger.info("Begin reading customers in our file database.");
 
         try {
+            Customer_info[] customer_infos = UserDao.findAll();
+            logger.info("All customers have been found and here are the results: \n");
 
-            Customer_info[] Customer_info = userDao.findAll();
-            System.out.println("Here are all the customers found: \n");
-                // for (int = 0; i < users.length; i++) {
-                    // User user = users[i];
-                    // if(user != null) {
-                        // System.out.println(User);
-                    // }
-                // }
-
-            Customer_info user = new Customer_info();
-
-            Object customer_info1 = new Customer_info ("Marilyn", "Monroe", "mm@hollywood.com", "passwordmm", "6/1/1926");
-
-            Customer_info test = new Customer_info();
-            System.out.println(test.getLast_name());
-
-            for(Object t:Customer_info ){
-                if(t != null) {
-                    System.out.println((Customer_info) t);
-                }
-            }
+            return customer_infos;
 
         } catch (IOException | NullPointerException e) {
             e.printStackTrace();
+            return null;
         }
     }
 
-    public boolean validateEmailNotUsed(String email){
-        return userDao.checkEmail(email);
-    }
+    @Override
+    public Customer_info update(Customer_info updateObject) { return null; }
 
-    public boolean registerCustomer_info(Customer_info newCustomer_info){
-        System.out.println("New customer trying to register: " + newCustomer_info);
-        if(!validateUserInput(newCustomer_info)){
-            System.out.println("Customer was not validated");
-            throw new RuntimeException();
+    @Override
+    public boolean delete(String id) { return false; }
+
+    public boolean validateEmailNotUsed(String email){ return userDao.checkEmail(email); }
+
+    public Customer_info create(Customer_info newCustomer_info){
+        logger.info("Customer trying to be registered: " + newCustomer_info);
+        if(!validateInput(newCustomer_info)){
+            throw new InvalidRequestException("Customer input was not validated. This could be due to an empty String or null values");
         }
 
-        validateEmailNotUsed(newCustomer_info.getEmail_address());
+        Customer_info persistedCustomer_info = userDao.create(newCustomer_info);
 
-        boolean persistedCustomer_info = false;
-        if(persistedCustomer_info = Boolean.parseBoolean(null)){
-            throw new InvalidRequestException("User input was not validated. It either contained an empty string or no value.");
+        if(persistedCustomer_info == null){
+            throw new ResourcePersistanceException("Customer was not persisted to the database upon registration.");
         }
-        System.out.println("Customer has been persisted: " + newCustomer_info);
-        return true;
+        logger.info("Customer has been persisted: " + newCustomer_info);
+        return persistedCustomer_info;
     }
 
-    private boolean validateUserInput(Customer_info newCustomer_info) {
+    @Override
+    public boolean validateUserInput(Customer_info newCustomer_info) {
         System.out.println("Validating Customer: " + newCustomer_info);
         if(newCustomer_info == null) return false;
         if(newCustomer_info.getFirst_name() == null || newCustomer_info.getFirst_name().trim().equals("")) return false;
@@ -76,7 +65,7 @@ public class UserServices {
         return newCustomer_info.getDate_of_birth() != null || !newCustomer_info.getDate_of_birth().trim().equals("");
     }
 
-    public Customer_info authenticateCustomer_info(String email, String password) throws AuthenticationException {
+    public Customer_info authenticateCustomer_info(String email, String password){
 
         if(password == null || password.trim().equals("") || password == null || password.trim().equals("")) {
             throw new InvalidRequestException("Either the username or the password is an invalid entry. Please try logging in again.");

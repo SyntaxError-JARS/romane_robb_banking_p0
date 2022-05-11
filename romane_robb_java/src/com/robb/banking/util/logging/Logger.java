@@ -22,13 +22,21 @@ public class Logger {
         return logger;
     }
 
+    public static Logger getLogger(){
+        if(logger == null){
+            logger = new Logger(true);
+        }
+
+        return logger;
+    }
+
     public void log(String message) {
 
         try (Writer logWriter = new FileWriter("src/main.resources/banking.log", true);) {
-            logWriter.write(LocalDateTime.now().toString() + "LOG: " + message + "\n");
+            logWriter.write(LocalDateTime.now().toString() + " LOG: " + message + "\n");
 
             if (printToConsole) {
-                System.out.println(LocalDateTime.now().toString() + "LOG: " + message);
+                System.out.println(LocalDateTime.now().toString() + " LOG: " + message);
             }
 
         } catch (IOException e) {
@@ -38,10 +46,10 @@ public class Logger {
 
     public void info(String message){
        try (Writer logWriter = new FileWriter("src/main.resources/banking.log", true);){
-             logWriter.write(LocalDateTime.now().toString() + "INFO: " + message + "\n");
+             logWriter.write(LocalDateTime.now().toString() + " INFO: " + message + "\n");
 
               if(printToConsole){
-                  System.out.println(LocalDateTime.now().toString() + "INFO: " + message);
+                  System.out.println(LocalDateTime.now().toString() + " INFO: " + message);
                 }
 
             } catch (IOException e){
@@ -54,10 +62,10 @@ public class Logger {
     public void debug(String message){
 
         try (Writer logWriter = new FileWriter("src/main.resources/banking.log", true);){
-            logWriter.write(LocalDateTime.now().toString() + "DEBUG: " + message + "\n");
+            logWriter.write(LocalDateTime.now().toString() + " DEBUG: " + message + "\n");
 
             if(printToConsole){
-                System.out.println(LocalDateTime.now().toString() + "DEBUG: " + message);
+                System.out.println(LocalDateTime.now().toString() + " DEBUG: " + message);
             }
 
         } catch (IOException e){
@@ -67,10 +75,10 @@ public class Logger {
 
     public void warn(String message){
         try (Writer logWriter = new FileWriter("src/main.resources/banking.log", true);){
-            logWriter.write(LocalDateTime.now().toString() + "WARN: " + message + "\n");
+            logWriter.write(LocalDateTime.now().toString() + " WARN: " + message + "\n");
 
             if(printToConsole){
-                System.out.println(LocalDateTime.now().toString() + "WARN: " + message);
+                System.out.println(LocalDateTime.now().toString() + " WARN: " + message);
             }
 
         } catch (IOException e){
