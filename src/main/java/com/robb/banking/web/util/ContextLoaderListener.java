@@ -1,10 +1,10 @@
 package com.robb.banking.web.util;
 
-
+import com.robb.banking.daos.Customer_infoDao;
+import com.robb.banking.services.Customer_infoServices;
+import com.robb.banking.web.servlets.AuthServlet;
+import com.robb.banking.web.servlets.Customer_infoServlet;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.robb.banking.daos.UserDao;
-import com.robb.banking.services.UserServices;
-
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -16,15 +16,15 @@ public class ContextLoaderListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         ObjectMapper mapper = new ObjectMapper();
-        UserDao userDao = new UserDao();
-        UserServices userServices = new userServices(userDao);
+        Customer_infoDao userDao = new Customer_infoDao();
+        Customer_infoServices customer_infoServices = new customer_infoServices(customer_infoDao);
 
-        AuthServlet authServlet = new AuthServlet(userServices, mapper);
-        UserServlet userServlet = new UserServlet(userServices, mapper);
+        AuthServlet authServlet = new AuthServlet(customer_infoServices, mapper);
+        Customer_infoServlet userServlet = new Customer_infoServlet(customer_infoServices, mapper);
 
         ServletContext context = sce.getServletContext();
         context.addServlet("AuthServlet", authServlet).addMapping("/auth");
-        context.addServlet("UserServlet", userServlet).addMapping("/users/*");
+        context.addServlet("Customer_infoServlet", userServlet).addMapping("/users/*");
     }
 
     @Override

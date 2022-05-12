@@ -1,7 +1,8 @@
 package com.robb.banking.web.servlets;
 
+import com.robb.banking.models.Customer_info;
+import com.robb.banking.services.Customer_infoServices;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.robb.banking.services.UserServices;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,22 +10,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class UserServlet extends HttpServlet {
+public class Customer_infoServlet extends HttpServlet {
 
-    private final UserServices userServices;
+    private final Customer_infoServices customer_infoServices;
 
     private final ObjectMapper mapper;
 
-    public UserServlet(UserServices userServices, ObjectMapper mapper) {
-        this.userServices = userServices;
+    public Customer_infoServlet(Customer_infoServices customer_infoServices, ObjectMapper mapper) {
+        this.customer_infoServices = customer_infoServices;
         this.mapper = mapper;
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        User[] users = userServices.readAll();
+        Customer_info[] customer_infos = customer_infoServices.readAll();
 
-        String payload = mapper.writeValueAsString(users);
+        String payload = mapper.writeValueAsString(customer_infos);
 
         resp.getWriter().write(payload);
     }

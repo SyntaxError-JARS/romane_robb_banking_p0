@@ -1,11 +1,11 @@
 package com.robb.banking.web.servlets;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.robb.banking.exceptions.InvalidRequestException;
 import com.robb.banking.models.Customer_info;
-import com.robb.banking.services.UserServices;
-
-import javax.naming.AuthenticationException;
+import com.robb.banking.services.Customer_infoServices;
+import com.robb.banking.web.dto.LoginCreds;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.robb.banking.exceptions.AuthenticationException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,12 +14,12 @@ import java.io.IOException;
 
 public class AuthServlet extends HttpServlet {
 
-    private final UserServices userServices;
+    private final Customer_infoServices customer_infoServices;
 
     private final ObjectMapper mapper;
 
-    public AuthServlet(UserServices userServices, ObjectMapper mapper){
-        this.userServices = userServices;
+    public AuthServlet(Customer_infoServices userServices, ObjectMapper mapper){
+        this.customer_infoServices = userServices;
         this.mapper = mapper;
     }
 
@@ -27,9 +27,9 @@ public class AuthServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
         try {
-            LoginCreds loginCreds = mapper.readvalue(req.getInputStream(), LoginCreds.class);
+            LoginCreds loginCreds = mapper.readValue(req.getInputStream(), LoginCreds.class);
 
-            Customer_info authCustomer_info = userServices.authenticateCustomer_info(loginCreds.getEmail(), loginCreds.getPassword());
+            Customer_info authCustomer_info = customer_infoServices.authenticateCustomer_info(loginCreds.getEmail(), loginCreds.getPassword());
 
             HttpSession httpSession = req.getSession(true);
             httpSession.setAttribute("authTrainer", authCustomer_info);

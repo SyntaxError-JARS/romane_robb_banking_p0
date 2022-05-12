@@ -1,25 +1,30 @@
 package com.robb.banking.services;
 
-import com.robb.banking.daos.UserDao;
+import com.robb.banking.daos.Customer_infoDao;
 import com.robb.banking.models.Customer_info;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-public class UserServiceTestSuite {
+import static org.mockito.Mockito.*;
 
-    UserServices sut;
+public class Customer_infoServiceTestSuite {
+
+    Customer_infoServices sut;
+    Customer_infoDao mockCustomer_infoDoa;
 
     @BeforeEach
     public void testPrep(){
-        sut = new UserServices(new UserDao());
+        mockCustomer_infoDoa = mock(Customer_infoDao.class);
+        sut = new Customer_infoServices(mockCustomer_infoDoa);
     }
 
     @Test
     public void test_validInput_givenValidUser_returnTrue(){
 
         Customer_info customer_info = new Customer_info("valid", "valid", "valid", "valid", "valid");
+        when(mockCustomer_infoDoa.create(customer_info)).thenReturn(customer_info);
 
         boolean actualResult = sut.validateInput(customer_info);
 
@@ -39,6 +44,7 @@ public class UserServiceTestSuite {
         Assertions.assertEquals("valid", actualCustomer_info.getEmail_address());
         Assertions.assertEquals("valid", actualCustomer_info.getUserpassword());
         Assertions.assertEquals("valid", actualCustomer_info.getDate_of_birth());
+        verify(mockCustomer_infoDoa, times(1).create(customer_info));
 
     }
 

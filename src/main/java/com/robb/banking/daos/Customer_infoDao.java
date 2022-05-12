@@ -1,7 +1,7 @@
 package com.robb.banking.daos;
 
-import com.robb.banking.util.ConnectionFactory;
 import com.robb.banking.models.Customer_info;
+import com.robb.banking.util.ConnectionFactory;
 import com.robb.banking.util.logging.Logger;
 import com.robb.banking.exceptions.ResourcePersistanceException;
 
@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.sql.*;
 import java.io.*;
 
-public class UserDao implements Crudable<Customer_info> {
+public class Customer_infoDao implements Crudable<Customer_info> {
 
     private Logger logger = Logger.getLogger();
 
@@ -47,7 +47,7 @@ public class UserDao implements Crudable<Customer_info> {
     }
 
     @Override
-    public Customer_info[] findAll() throws IOException {
+    public static Customer_info[] findAll() throws IOException {
 
         Customer_info[] customer_infos = new Customer_info[10];
 
