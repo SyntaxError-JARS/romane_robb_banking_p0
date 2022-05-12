@@ -23,11 +23,7 @@ public class Customer_infoServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Customer_info[] customer_infos = customer_infoServices.readAll();
 
-        String payload = mapper.writeValueAsString(customer_infos);
-
-        resp.getWriter().write(payload);
     }
 
 }

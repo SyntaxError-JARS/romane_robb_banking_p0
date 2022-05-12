@@ -47,7 +47,7 @@ public class Customer_infoDao implements Crudable<Customer_info> {
     }
 
     @Override
-    public static Customer_info[] findAll() throws IOException {
+    public Customer_info[] findAll() throws IOException {
 
         Customer_info[] customer_infos = new Customer_info[10];
 
@@ -55,7 +55,7 @@ public class Customer_infoDao implements Crudable<Customer_info> {
 
         try (Connection conn = ConnectionFactory.getInstance().getConnection();) {
 
-            String sql = "select * from user";
+            String sql = "select * from customer_info";
             Statement s = conn.createStatement();
 
             ResultSet rs = ((Statement) s).executeQuery(sql);

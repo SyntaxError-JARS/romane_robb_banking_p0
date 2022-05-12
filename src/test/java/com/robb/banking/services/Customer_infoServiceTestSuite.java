@@ -1,5 +1,6 @@
 package com.robb.banking.services;
 
+import org.checkerframework.dataflow.qual.TerminatesExecution;
 import com.robb.banking.daos.Customer_infoDao;
 import com.robb.banking.models.Customer_info;
 import org.junit.jupiter.api.Assertions;
@@ -44,7 +45,7 @@ public class Customer_infoServiceTestSuite {
         Assertions.assertEquals("valid", actualCustomer_info.getEmail_address());
         Assertions.assertEquals("valid", actualCustomer_info.getUserpassword());
         Assertions.assertEquals("valid", actualCustomer_info.getDate_of_birth());
-        verify(mockCustomer_infoDoa, times(1).create(customer_info));
+        verify(mockCustomer_infoDoa, times(1)).create(customer_info);
 
     }
 
