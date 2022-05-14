@@ -31,4 +31,8 @@ This project was created utilizing the following tech stack:
 - PostgreSQL (hosted on Azure PostgreSQL Server)
 - Git SCM (hosted on GitHub)
 - HTML/CSS/JS
-- Servlets
+- Apache Tomcat 9.0.62 Servlets
+- Postman
+- 
+- 
+- 

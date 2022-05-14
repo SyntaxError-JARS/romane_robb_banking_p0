@@ -1,7 +1,10 @@
 package com.robb.banking.web.servlets;
 
+import com.robb.banking.exceptions.ResourcePersistanceException;
 import com.robb.banking.models.Customer_info;
 import com.robb.banking.services.Customer_infoServices;
+import com.robb.banking.daos.Customer_infoDao;
+import com.robb.banking.util.logging.Logger;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import javax.servlet.ServletException;
@@ -9,12 +12,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
-public class Customer_infoServlet extends HttpServlet {
+import com.robb.banking.util.logging.Logger;
+
+public class Customer_infoServlet extends HttpServlet implements Authable {
 
     private final Customer_infoServices customer_infoServices;
 
     private final ObjectMapper mapper;
+
+    private final Logger logger = Logger.getLogger();
 
     public Customer_infoServlet(Customer_infoServices customer_infoServices, ObjectMapper mapper) {
         this.customer_infoServices = customer_infoServices;
@@ -24,6 +32,39 @@ public class Customer_infoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        if(!checkAuth(req, resp)) return;
+
+        if(req.getParameter("id") != null && req.getParameter("email") != null){
+            resp.getWriter().write("Hey you have the follow id and email " + req.getParameter("id") + " " + req.getParameter("email") );
+            return;
+        }
+
+        if(req.getParameter("id") != null){
+            Customer_info customer_info;
+            try {
+                customer_info = customer_infoServices.readById(req.getParameter("id"));
+            } catch (ResourcePersistanceException e){
+                logger.warn(e.getMessage());
+                resp.setStatus(404);
+                resp.getWriter().write(e.getMessage());
+                return;
+            }
+            String payload = mapper.writeValueAsString(customer_info);
+            resp.getWriter().write(payload);
+            return;
+        }
+
+        List<Customer_info> customer_infos = customer_infoServices.readAll();
+        String payload = mapper.writeValueAsString(customer_infos);
+
+        resp.getWriter().write(payload);
+
     }
+
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    }
+
 
 }
