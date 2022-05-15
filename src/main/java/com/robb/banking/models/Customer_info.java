@@ -2,6 +2,8 @@
 
 package com.robb.banking.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.IOException;
 
 // The use of the public class is to make the Customer_info class accessible and visible to all other classes.
@@ -11,6 +13,7 @@ public class Customer_info {
     private String first_name;
     private String last_name;
     private String email_address;
+    @JsonIgnore
     private String userpassword;
     private String date_of_birth;
 
@@ -27,6 +30,8 @@ public class Customer_info {
         this.userpassword = userpassword;
         this.date_of_birth = date_of_birth;
     }
+
+    public Customer_info(String userpassword) { this.userpassword = userpassword; }
 
     public Customer_info() {
     }

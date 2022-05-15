@@ -1,10 +1,15 @@
 package com.robb.banking.services;
 
-public interface Serviceable <T>{
+import com.robb.banking.models.Account_info;
+import com.robb.banking.models.Customer_info;
+
+import java.util.List;
+
+public interface Serviceable<T> {
 
     T create(T newObject);
 
-    T[] readAll();
+    List<T> readAll();
     T readById(String id);
 
     T update(T updateObject);
@@ -12,4 +17,6 @@ public interface Serviceable <T>{
     boolean delete(String id);
 
     boolean validateInput(T object);
+
+    Account_info readbyID(String id);
 }

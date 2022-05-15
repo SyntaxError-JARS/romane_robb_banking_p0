@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.robb.banking.models.Account_info;
 import com.robb.banking.services.Account_infoServices;
 
+import com.robb.banking.exceptions.AuthenticationException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -40,7 +41,7 @@ public class Account_infoServlet extends HttpServlet implements Authable {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        if (!checkAuth.checkAuth(req, resp)) return;
+        if (!Authable.checkAuth(req, resp)) return;
         Account_info newAccount_info = mapper.readValue(req.getInputStream(), Account_info.class);
         Account_info persistedAccount_info = account_infoServices.create(newAccount_info);
 

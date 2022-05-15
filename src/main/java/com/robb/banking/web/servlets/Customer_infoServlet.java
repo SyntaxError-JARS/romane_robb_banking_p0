@@ -32,7 +32,7 @@ public class Customer_infoServlet extends HttpServlet implements Authable {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        if(!checkAuth(req, resp)) return;
+        if(!Authable.checkAuth(req, resp)) return;
 
         if(req.getParameter("id") != null && req.getParameter("email") != null){
             resp.getWriter().write("Hey you have the follow id and email " + req.getParameter("id") + " " + req.getParameter("email") );

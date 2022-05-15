@@ -27,7 +27,6 @@ public class ContextLoaderListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         ObjectMapper mapper = new ObjectMapper();
 
-
         Customer_infoDao customer_infoDao = new Customer_infoDao();
         Account_infoDao account_infoDao = new Account_infoDao();
 

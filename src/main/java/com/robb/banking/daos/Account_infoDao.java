@@ -3,11 +3,11 @@ package com.robb.banking.daos;
 import com.robb.banking.exceptions.ResourcePersistanceException;
 import com.robb.banking.models.Account_info;
 import com.robb.banking.util.ConnectionFactory;
-import com.robb.banking.util.collections.LinkedList;
 import com.robb.banking.util.logging.Logger;
 import java.io.IOException;
 import java.sql.*;
 import java.util.List;
+import java.util.LinkedList;
 
 public class Account_infoDao implements Crudable<Account_info> {
 
@@ -16,6 +16,7 @@ public class Account_infoDao implements Crudable<Account_info> {
     @Override
     public Account_info create(Account_info newAccount_info) {
         try (Connection conn = ConnectionFactory.getInstance().getConnection();) {
+
             String sql = "insert into account info values (default, ?, ?, ?, ?, ?";
 
             PreparedStatement ps = conn.prepareStatement(sql);

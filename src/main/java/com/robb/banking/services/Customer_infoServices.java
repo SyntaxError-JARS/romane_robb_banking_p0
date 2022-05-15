@@ -2,13 +2,13 @@ package com.robb.banking.services;
 
 import com.robb.banking.exceptions.AuthenticationException;
 import com.robb.banking.exceptions.InvalidRequestException;
+import com.robb.banking.models.Account_info;
 import com.robb.banking.models.Customer_info;
 import com.robb.banking.daos.Customer_infoDao;
 import com.robb.banking.exceptions.ResourcePersistanceException;
 import com.robb.banking.util.logging.Logger;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
 
 public class Customer_infoServices implements Serviceable<Customer_info> {
@@ -22,13 +22,13 @@ public class Customer_infoServices implements Serviceable<Customer_info> {
     }
 
     @Override
-    public Customer_info[] readAll() {
+    public List<Customer_info> readAll() {
         logger.info("Begin reading Customer_infos in our file database.");
 
         try {
-            List<Customer_info> customer_infos = Arrays.asList(customer_infoDao.findAll());
+            List<Customer_info> customer_infos = customer_infoDao.findAll();
             logger.info("All customer_infos have been found and here are the results: \n");
-            return customer_infos.toArray(new Customer_info[0]);
+            return customer_infos;
 
         } catch (IOException | NullPointerException e) {
             e.printStackTrace();
@@ -88,6 +88,11 @@ public class Customer_infoServices implements Serviceable<Customer_info> {
         if (newCustomer_info.getUserpassword() == null || newCustomer_info.getUserpassword().trim().equals(""))
             return false;
         return newCustomer_info.getDate_of_birth() != null || !newCustomer_info.getDate_of_birth().trim().equals("");
+    }
+
+    @Override
+    public Account_info readbyID(String id) {
+        return null;
     }
 
     public Customer_info authenticateCustomer_info(String email, String password) {

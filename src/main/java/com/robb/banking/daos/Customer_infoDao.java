@@ -8,6 +8,8 @@ import com.robb.banking.exceptions.ResourcePersistanceException;
 import java.io.IOException;
 import java.sql.*;
 import java.io.*;
+import java.util.Arrays;
+import java.util.List;
 
 public class Customer_infoDao implements Crudable<Customer_info> {
 
@@ -47,7 +49,7 @@ public class Customer_infoDao implements Crudable<Customer_info> {
     }
 
     @Override
-    public Customer_info[] findAll() throws IOException {
+    public List<Customer_info> findAll() throws IOException {
 
         Customer_info[] customer_infos = new Customer_info[10];
 
@@ -80,7 +82,7 @@ public class Customer_infoDao implements Crudable<Customer_info> {
         }
 
         System.out.println("Returning customer information to user.");
-        return customer_infos;
+        return Arrays.asList(customer_infos);
     }
 
     @Override
