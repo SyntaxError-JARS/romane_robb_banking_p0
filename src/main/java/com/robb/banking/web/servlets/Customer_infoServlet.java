@@ -16,6 +16,8 @@ import java.util.List;
 
 import com.robb.banking.util.logging.Logger;
 
+import static com.robb.banking.web.servlets.Authable.checkAuth;
+
 public class Customer_infoServlet extends HttpServlet implements Authable {
 
     private final Customer_infoServices customer_infoServices;
@@ -32,7 +34,7 @@ public class Customer_infoServlet extends HttpServlet implements Authable {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        if(!Authable.checkAuth(req, resp)) return;
+        if(!checkAuth(req, resp)) return;
 
         if(req.getParameter("id") != null && req.getParameter("email") != null){
             resp.getWriter().write("Hey you have the follow id and email " + req.getParameter("id") + " " + req.getParameter("email") );

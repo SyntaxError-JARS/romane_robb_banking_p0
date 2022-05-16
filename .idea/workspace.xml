@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d6466ccb-70c3-464c-bd3e-54dfc2a29a28" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_13_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_13_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_13_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_4_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_12_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_12_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_3_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_4_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_42_3_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Banking Template 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Banking Template 2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Custom table.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robb_banking_customers.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/romane_robb_banking_p0.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/robb/banking/web/servlets/AuthServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/robb/banking/web/servlets/AuthServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/robb/banking/web/servlets/Customer_infoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/robb/banking/web/servlets/Customer_infoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/robb/banking/web/servlets/TestServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/robb/banking/web/servlets/TestServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/web/servlets/AuthServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/web/servlets/AuthServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/web/servlets/Customer_infoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/web/servlets/Customer_infoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/robb/banking/web/servlets/AuthServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/robb/banking/web/servlets/AuthServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/robb/banking/web/servlets/Customer_infoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/robb/banking/web/servlets/Customer_infoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="29ECRs4NIVHBl1NYJd83IlEMl3F" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="JUnit.Customer_infoServiceTestSuite">
+    <configuration name="ConnectionFactoryTestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="banking" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.robb.banking.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.robb.banking.util" />
+      <option name="MAIN_CLASS_NAME" value="com.robb.banking.util.ConnectionFactoryTestSuite" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Customer_infoServiceTestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="banking" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.robb.banking.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.robb.banking.services" />
+      <option name="MAIN_CLASS_NAME" value="com.robb.banking.services.Customer_infoServiceTestSuite" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="banking [clean,install,tomcat7:deploy]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="install" />
+                <option value="tomcat7:deploy" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.ConnectionFactoryTestSuite" />
+      <item itemvalue="JUnit.Customer_infoServiceTestSuite" />
+      <item itemvalue="Maven.banking [clean,install,tomcat7:deploy]" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.Customer_infoServiceTestSuite" />
+        <item itemvalue="JUnit.ConnectionFactoryTestSuite" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d6466ccb-70c3-464c-bd3e-54dfc2a29a28" name="Changes" comment="" />
+      <created>1652668856029</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1652668856029</updated>
+    </task>
+    <servers />
+  </component>
+</project>

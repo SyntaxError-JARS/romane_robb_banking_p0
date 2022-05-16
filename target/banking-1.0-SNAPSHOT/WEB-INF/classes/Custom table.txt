@@ -1,0 +1,53 @@
+-- Robb's Banking Customer List
+
+v2
+
+create table banking(
+	id serial primary key,
+	"first_name" varchar(20) not null,
+	"last_name" varchar(20) not null,
+	"account_balance" varchar(10) not null,
+	"email_address" varchar(40) not null,
+	"user_name" varchar(20) not null,
+	"password" varchar(10) not null,
+	"date_of_birth" varchar(30) not null,
+	"account_type" varchar(20) not null,
+	"account_number" varchar(20) not null,
+);
+
+v1
+
+create table banking(
+	id serial primary key,
+	"first_name" varchar(20) not null,
+	"last_name" varchar(20) not null,
+	"full_name" varchar(40) not null,
+	"gender" varchar(20) not null,
+	"user_name" varchar(20) not null,
+	"password" varchar(10) not null,
+	"email" varchar(30) not null,
+	"street" varchar(20) not null,
+	"city" varchar(20) not null,
+	"state" varchar(20) not null,
+	"zip_code" varchar(20) not null,
+	"ip_address" varchar(20) not null,
+	"debit_card" varchar(20) not null,
+	"nationality" varchar(20) not null,
+);
+
+_________________________
+romane_robb_p0
+
+customer_info
+first_name
+last_name
+email primary key
+password
+date_of_birth
+
+account_info
+account_number primary key
+account_balance
+account_type
+account_history
+memo

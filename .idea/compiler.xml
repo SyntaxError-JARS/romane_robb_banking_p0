@@ -6,11 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="romane_robb_banking_p0" />
+        <module name="banking" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="romane_robb_banking_p0" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
