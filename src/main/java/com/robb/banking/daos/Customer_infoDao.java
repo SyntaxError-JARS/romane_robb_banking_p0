@@ -21,7 +21,7 @@ public class Customer_infoDao implements Crudable<Customer_info> {
 
         try (Connection conn = ConnectionFactory.getInstance().getConnection();) {
 
-            String sql = "insert into customer_info (first_name, last_name, email_address, userpassword, date_of_birth) values (?, ?, ?, ?, ?)";
+            String sql = "insert into customer_info (first_name, last_name, email, password, date_of_birth) values (?, ?, ?, ?, ?)";
 
             PreparedStatement ps = conn.prepareStatement(sql);
 
@@ -30,8 +30,8 @@ public class Customer_infoDao implements Crudable<Customer_info> {
 
             ps.setString(1, newCustomer_info.getFirst_name());
             ps.setString(2, newCustomer_info.getLast_name());
-            ps.setString(3, newCustomer_info.getEmail_address());
-            ps.setString(4, newCustomer_info.getUserpassword());
+            ps.setString(3, newCustomer_info.getEmail());
+            ps.setString(4, newCustomer_info.getPassword());
             ps.setString(5, newCustomer_info.getDate_of_birth());
 
             int checkInsert = ps.executeUpdate();
@@ -67,8 +67,8 @@ public class Customer_infoDao implements Crudable<Customer_info> {
 
                 customer_info.setFirst_name(rs.getString("first_name"));
                 customer_info.setLast_name(rs.getString("last_name"));
-                customer_info.setEmail_address(rs.getString("email_address"));
-                customer_info.setUserpassword(rs.getString("userpassword"));
+                customer_info.setEmail(rs.getString("email"));
+                customer_info.setPassword(rs.getString("password"));
                 customer_info.setDate_of_birth(rs.getString("date_of_birth"));
 
                 System.out.println("Inserted user into index" + index);
@@ -106,8 +106,8 @@ public class Customer_infoDao implements Crudable<Customer_info> {
 
             customer_info.setFirst_name(rs.getString("first_name"));
             customer_info.setLast_name(rs.getString("last_name"));
-            customer_info.setEmail_address(rs.getString("email_address"));
-            customer_info.setUserpassword(rs.getString("userpassword"));
+            customer_info.setEmail(rs.getString("email"));
+            customer_info.setPassword(rs.getString("usePassword"));
             customer_info.setDate_of_birth(rs.getString("date_of_birth"));
 
             return customer_info;
@@ -146,8 +146,8 @@ public class Customer_infoDao implements Crudable<Customer_info> {
 
             customer_info.setFirst_name(rs.getString("first_name"));
             customer_info.setLast_name(rs.getString("last_name"));
-            customer_info.setEmail_address(rs.getString("email_address"));
-            customer_info.setUserpassword(rs.getString("userpassword"));
+            customer_info.setEmail(rs.getString("email"));
+            customer_info.setPassword(rs.getString("password"));
             customer_info.setDate_of_birth(rs.getString("date_of_birth"));
 
             return customer_info;

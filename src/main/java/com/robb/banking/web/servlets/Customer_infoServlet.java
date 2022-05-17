@@ -1,5 +1,6 @@
 package com.robb.banking.web.servlets;
 
+import com.robb.banking.exceptions.InvalidRequestException;
 import com.robb.banking.exceptions.ResourcePersistanceException;
 import com.robb.banking.models.Customer_info;
 import com.robb.banking.services.Customer_infoServices;
@@ -11,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
@@ -34,18 +36,18 @@ public class Customer_infoServlet extends HttpServlet implements Authable {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        if(!checkAuth(req, resp)) return;
+        if (!checkAuth(req, resp)) return;
 
-        if(req.getParameter("id") != null && req.getParameter("email") != null){
-            resp.getWriter().write("Hey you have the follow id and email " + req.getParameter("id") + " " + req.getParameter("email") );
+        if (req.getParameter("id") != null && req.getParameter("email") != null) {
+            resp.getWriter().write("Hey you have the follow id and email " + req.getParameter("id") + " " + req.getParameter("email"));
             return;
         }
 
-        if(req.getParameter("id") != null){
+        if (req.getParameter("id") != null) {
             Customer_info customer_info;
             try {
                 customer_info = customer_infoServices.readById(req.getParameter("id"));
-            } catch (ResourcePersistanceException e){
+            } catch (ResourcePersistanceException e) {
                 logger.warn(e.getMessage());
                 resp.setStatus(404);
                 resp.getWriter().write(e.getMessage());
@@ -57,6 +59,7 @@ public class Customer_infoServlet extends HttpServlet implements Authable {
         }
 
         List<Customer_info> customer_infos = customer_infoServices.readAll();
+
         String payload = mapper.writeValueAsString(customer_infos);
 
         resp.getWriter().write(payload);
@@ -66,7 +69,18 @@ public class Customer_infoServlet extends HttpServlet implements Authable {
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+
     }
 
+    protected boolean checkAuth(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        HttpSession httpSession = req.getSession();
+        if (httpSession.getAttribute("authUser") == null) {
+            resp.getWriter().write("Unauthorized request. You are not logged in as a registered user.");
+            resp.setStatus(401);
+            return false;
+        }
+        return true;
 
+
+    }
 }

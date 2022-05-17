@@ -32,7 +32,9 @@ public class AuthServlet extends HttpServlet {
             Customer_info authCustomer_info = customer_infoServices.authenticateCustomer_info(loginCreds.getEmail(), loginCreds.getPassword());
 
             HttpSession httpSession = req.getSession(true);
-            httpSession.setAttribute("authTrainer", authCustomer_info);
+            httpSession.setAttribute("authCustomer", authCustomer_info);
+
+            resp.setStatus(200);
 
             resp.getWriter().write("You have successfully logged in!");
         } catch (AuthenticationException | InvalidRequestException e){

@@ -42,8 +42,8 @@ public class Customer_infoServiceTestSuite {
 
         Assertions.assertEquals("valid", actualCustomer_info.getFirst_name());
         Assertions.assertEquals("valid", actualCustomer_info.getLast_name());
-        Assertions.assertEquals("valid", actualCustomer_info.getEmail_address());
-        Assertions.assertEquals("valid", actualCustomer_info.getUserpassword());
+        Assertions.assertEquals("valid", actualCustomer_info.getEmail());
+        Assertions.assertEquals("valid", actualCustomer_info.getPassword());
         Assertions.assertEquals("valid", actualCustomer_info.getDate_of_birth());
         verify(mockCustomer_infoDoa, times(1)).create(customer_info);
 

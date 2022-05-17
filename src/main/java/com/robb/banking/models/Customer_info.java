@@ -12,9 +12,9 @@ public class Customer_info {
 // The use of private below is to restrict access to ONLY be accessed by the defining class which in this case would be Customer_info.
     private String first_name;
     private String last_name;
-    private String email_address;
+    private String email;
     @JsonIgnore
-    private String userpassword;
+    private String password;
     private String date_of_birth;
 
 
@@ -22,16 +22,16 @@ public class Customer_info {
 // The use of super is to access the parent class constructor (a special method that is used to initialize objects).
 // Super is utilizing inheritance in regard to Object-oriented programming (OOP).
 // () is used to call the specific method it is next to.
-    public Customer_info(String first_name, String last_name, String email_address, String userpassword, String date_of_birth) {
+    public Customer_info(String first_name, String last_name, String email, String password, String date_of_birth) {
         super();
         this.first_name = first_name;
         this.last_name = last_name;
-        this.email_address = email_address;
-        this.userpassword = userpassword;
+        this.email = email;
+        this.password = password;
         this.date_of_birth = date_of_birth;
     }
 
-    public Customer_info(String userpassword) { this.userpassword = userpassword; }
+    public Customer_info(String password) { this.password = password; }
 
     public Customer_info() {
     }
@@ -55,20 +55,20 @@ public class Customer_info {
         this.last_name = last_name;
     }
 
-    public String getEmail_address() {
-        return email_address;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmail_address(String email_address) {
-        this.email_address = email_address;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getUserpassword() {
-        return userpassword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setUserpassword(String userpassword) {
-        this.userpassword = userpassword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getDate_of_birth() {
@@ -88,9 +88,8 @@ public class Customer_info {
         mutableString
                 .append(first_name).append(",")
                 .append(last_name).append(",")
-                .append(email_address).append(",")
-                .append(email_address).append(",")
-                .append(userpassword).append(",")
+                .append(email).append(",")
+                .append(password).append(",")
                 .append(date_of_birth).append(",");
 
         return mutableString.toString();
@@ -103,8 +102,8 @@ public class Customer_info {
         return "Customer_info{" +
                 "first_name='" + first_name + '\'' +
                 ", last_name='" + last_name + '\'' +
-                ", email_address='" + email_address + '\'' +
-                ", userpassword='" + userpassword + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
                 ", date_of_birth='" + date_of_birth + '\'' +
                 '}';
 

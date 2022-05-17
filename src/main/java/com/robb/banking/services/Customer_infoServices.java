@@ -63,7 +63,7 @@ public class Customer_infoServices implements Serviceable<Customer_info> {
             throw new InvalidRequestException("Customer input was not validated. This could be due to an empty String or null values");
         }
 
-        if (validateEmailNotUsed(newCustomer_info.getEmail_address())) {
+        if (validateEmailNotUsed(newCustomer_info.getEmail())) {
             throw new InvalidRequestException("Customer email is already in use. Please try again with another email address or login into your previous account.");
         }
 
@@ -83,9 +83,9 @@ public class Customer_infoServices implements Serviceable<Customer_info> {
         if (newCustomer_info.getFirst_name() == null || newCustomer_info.getFirst_name().trim().equals(""))
             return false;
         if (newCustomer_info.getLast_name() == null || newCustomer_info.getLast_name().trim().equals("")) return false;
-        if (newCustomer_info.getEmail_address() == null || newCustomer_info.getEmail_address().trim().equals(""))
+        if (newCustomer_info.getEmail() == null || newCustomer_info.getEmail().trim().equals(""))
             return false;
-        if (newCustomer_info.getUserpassword() == null || newCustomer_info.getUserpassword().trim().equals(""))
+        if (newCustomer_info.getPassword() == null || newCustomer_info.getPassword().trim().equals(""))
             return false;
         return newCustomer_info.getDate_of_birth() != null || !newCustomer_info.getDate_of_birth().trim().equals("");
     }

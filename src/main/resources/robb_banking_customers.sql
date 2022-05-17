@@ -13,8 +13,8 @@ drop table if exists customer_info;
 create table customer_info (
 	"first_name" varchar(20) not null,
 	"last_name" varchar(20) not null,
-	"email_address" varchar(40) primary key,
-	"userpassword" varchar(10) not null,
+	"email" varchar(40) primary key,
+	"password" varchar(10) not null,
 	"date_of_birth" varchar(20) not null
 );
 
@@ -32,7 +32,7 @@ create table account_info (
 -- Linking Tables in SQL
 alter table account_info
 add constraint fk_user_email
-foreign key(user_email) references customer_info(email_address);
+foreign key(user_email) references customer_info(email);
 
 -- Step #3 is to insert data into your table. This part is incredibly tedious without something like Mockaroo :-).
 
