@@ -18,8 +18,8 @@ public class AuthServlet extends HttpServlet {
 
     private final ObjectMapper mapper;
 
-    public AuthServlet(Customer_infoServices userServices, ObjectMapper mapper){
-        this.customer_infoServices = userServices;
+    public AuthServlet(Customer_infoServices customer_infoServices, ObjectMapper mapper){
+        this.customer_infoServices = customer_infoServices;
         this.mapper = mapper;
     }
 

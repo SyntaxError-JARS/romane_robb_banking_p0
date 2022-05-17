@@ -151,6 +151,7 @@ public class Customer_infoDao implements Crudable<Customer_info> {
             customer_info.setDate_of_birth(rs.getString("date_of_birth"));
 
             return customer_info;
+
         } catch (SQLException e) {
             e.printStackTrace();
             return null;

@@ -5,39 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6466ccb-70c3-464c-bd3e-54dfc2a29a28" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_13_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_13_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_13_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_4_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_12_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_12_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_3_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_4_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_3_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_42_3_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Banking Template 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Banking Template 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Custom table.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/robb_banking_customers.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/romane_robb_banking_p0.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/robb/banking/daos/Customer_infoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/robb/banking/daos/Customer_infoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/robb/banking/services/Customer_infoServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/robb/banking/services/Customer_infoServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/robb/banking/web/dto/LoginCreds.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/robb/banking/web/dto/LoginCreds.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/robb/banking/web/servlets/AuthServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/robb/banking/web/servlets/AuthServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/robb/banking/web/servlets/Customer_infoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/robb/banking/web/servlets/Customer_infoServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/robb/banking/web/servlets/TestServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/robb/banking/web/servlets/TestServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/robb/banking/web/util/ContextLoaderListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/robb/banking/web/util/ContextLoaderListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/robb_banking_customers.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/robb_banking_customers.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/web/servlets/AuthServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/web/servlets/AuthServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/web/servlets/Customer_infoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/web/servlets/Customer_infoServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/robb/banking/web/servlets/AuthServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/robb/banking/web/servlets/AuthServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/robb/banking/web/servlets/Customer_infoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/robb/banking/web/servlets/Customer_infoServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,13 +44,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="JUnit.Customer_infoServiceTestSuite">
+}</component>
+  <component name="RunManager" selected="Maven.banking [clean,install,tomcat7:deploy]">
     <configuration name="ConnectionFactoryTestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="banking" />
       <extension name="coverage">
@@ -139,8 +115,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Customer_infoServiceTestSuite" />
         <item itemvalue="JUnit.ConnectionFactoryTestSuite" />
+        <item itemvalue="JUnit.Customer_infoServiceTestSuite" />
       </list>
     </recent_temporary>
   </component>

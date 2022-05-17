@@ -37,6 +37,7 @@ foreign key(user_email) references customer_info(email_address);
 -- Step #3 is to insert data into your table. This part is incredibly tedious without something like Mockaroo :-).
 
 insert into customer_info values ('Megan', 'Lewis', 'meganlewis@gmail.com', '783254@', '1/26/1987');
+insert into customer_info values ('Romane', 'Robb', 'robb@mail.com', 'password', '1/27/1901');
 insert into customer_info values ('Jennifer', 'Connelly', 'jenniferc@yahoo.com', 'n89thtg!2', '6/15/2001');
 insert into customer_info values ('Richard', 'Hendrix', 'richhendr45@aol.com', '&%yty5tg!2', '12/2/1975');
 insert into customer_info values ('Judas', 'Priest', 'jpriest@gmail.com', 'thaou%$#12', '7/21/2006');
@@ -58,6 +59,7 @@ insert into account_info values (default, '961824920', 109, 'Checking', 'unknown
 insert into account_info values (default, '278349182', 8923, 'Savings', 'BeverlyHills20@hotmail.com', 'Data to be entered by the customer');
 insert into account_info values (default, '761923761', 78453, 'Checking', 'kellyAnn@jpmorganchase.com', 'Data to be entered by the customer');
 insert into account_info values (default, '518236491', 26738, 'Savings', 'mr@smithbarney.com', 'Data to be entered by the customer');
+insert into account_info values (default, '515236491', 29738, 'Checking', 'robb@mail.com', 'Data to be entered by the customer');
 
 -- Step #4 is to run a test to make sure the data you inserted above is actually in your table.
 

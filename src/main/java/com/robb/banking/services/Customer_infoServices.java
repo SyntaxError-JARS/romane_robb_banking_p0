@@ -103,11 +103,9 @@ public class Customer_infoServices implements Serviceable<Customer_info> {
 
         Customer_info authenticatedCustomer_info = customer_infoDao.authenticateCustomer_info(email, password);
 
-
         if (authenticatedCustomer_info == null) {
             throw new AuthenticationException("Unauthenticated user. The information provided was not consistent with our database.");
         }
-
 
         return authenticatedCustomer_info;
 
