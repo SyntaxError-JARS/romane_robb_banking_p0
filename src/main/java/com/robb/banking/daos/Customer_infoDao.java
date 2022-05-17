@@ -131,7 +131,7 @@ public class Customer_infoDao implements Crudable<Customer_info> {
     public Customer_info authenticateCustomer_info(String email, String password) {
 
         try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
-            String sql = "select * from trainer where email = ? and password = ?";
+            String sql = "select * from customer_info where email = ? and password = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, email);
             ps.setString(2, password);

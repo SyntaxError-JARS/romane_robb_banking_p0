@@ -97,7 +97,7 @@ public class Customer_infoServices implements Serviceable<Customer_info> {
 
     public Customer_info authenticateCustomer_info(String email, String password) {
 
-        if (password == null || password.trim().equals("") || password == null || password.trim().equals("")) {
+        if (email == null || email.trim().equals("") || password == null || password.trim().equals("")) {
             throw new InvalidRequestException("Either the username or the password is an invalid entry. Please try logging in again.");
         }
 
