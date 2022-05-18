@@ -2,7 +2,9 @@ package com.robb.banking.services;
 
 import com.robb.banking.daos.Account_infoDao;
 import com.robb.banking.exceptions.InvalidRequestException;
+import com.robb.banking.exceptions.ResourcePersistanceException;
 import com.robb.banking.models.Account_info;
+import com.robb.banking.models.Customer_info;
 import com.robb.banking.util.logging.Logger;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,6 +16,8 @@ public class Account_infoServices implements Serviceable<Account_info> {
     private final Logger logger = Logger.getLogger();
 
   private static Account_infoDao account_infoDao;
+
+  private boolean validateEmailNotUsed(String email) { return false; }
 
     public Account_infoServices(Account_infoDao account_infoDao) {
         this.account_infoDao = account_infoDao;
@@ -120,7 +124,23 @@ public class Account_infoServices implements Serviceable<Account_info> {
 
     @Override
     public Account_info create(Account_info newObject) {
-        return null;
+
+        public Account_info create(Account_info newAccount_info) {
+            logger.info("Customer trying to be registered: " + newAccount_info);
+            if (!validateInput(newAccount_info)) {
+                throw new InvalidRequestException("Customer input was not validated. This could be due to an empty String or null values");
+            }
+
+            if (validateEmailNotUsed(newAccount_info.getEmail())) {
+                throw new InvalidRequestException("Customer email is already in use. Please try again with another email address or login into your previous account.");
+            }
+
+            Customer_info persistedAccount_info = account_infoDao.create(newAccount_info);
+
+            logger.info("Customer has been persisted: " + newAccount_info);
+            return persistedAccount_info;
+        }
+
     }
 
     @Override

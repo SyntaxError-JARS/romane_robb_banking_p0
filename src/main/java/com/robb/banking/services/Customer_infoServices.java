@@ -17,9 +17,7 @@ public class Customer_infoServices implements Serviceable<Customer_info> {
 
     private Logger logger = Logger.getLogger();
 
-    public Customer_infoServices(Customer_infoDao customer_infoDao) {
-        this.customer_infoDao = customer_infoDao;
-    }
+    public Customer_infoServices(Customer_infoDao customer_infoDao) { this.customer_infoDao = customer_infoDao; }
 
     @Override
     public List<Customer_info> readAll() {
@@ -49,7 +47,7 @@ public class Customer_infoServices implements Serviceable<Customer_info> {
     }
 
     @Override
-    public boolean delete(String id) {
+    public boolean delete(String email) {
         return false;
     }
 
@@ -78,15 +76,12 @@ public class Customer_infoServices implements Serviceable<Customer_info> {
 
     @Override
     public boolean validateInput(Customer_info newCustomer_info) {
-        System.out.println("Validating Customer: " + newCustomer_info);
+        logger.debug("Validating Customer: " + newCustomer_info);
         if (newCustomer_info == null) return false;
-        if (newCustomer_info.getFirst_name() == null || newCustomer_info.getFirst_name().trim().equals(""))
-            return false;
+        if (newCustomer_info.getFirst_name() == null || newCustomer_info.getFirst_name().trim().equals("")) return false;
         if (newCustomer_info.getLast_name() == null || newCustomer_info.getLast_name().trim().equals("")) return false;
-        if (newCustomer_info.getEmail() == null || newCustomer_info.getEmail().trim().equals(""))
-            return false;
-        if (newCustomer_info.getPassword() == null || newCustomer_info.getPassword().trim().equals(""))
-            return false;
+        if (newCustomer_info.getEmail() == null || newCustomer_info.getEmail().trim().equals("")) return false;
+        if (newCustomer_info.getPassword() == null || newCustomer_info.getPassword().trim().equals("")) return false;
         return newCustomer_info.getDate_of_birth() != null || !newCustomer_info.getDate_of_birth().trim().equals("");
     }
 

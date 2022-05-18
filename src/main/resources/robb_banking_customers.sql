@@ -65,6 +65,7 @@ insert into account_info values (default, '518236491', 26738, 'Savings', 'mr@smi
 -- Step #4 is to run a test to make sure the data you inserted above is actually in your table.
 
 select * from customer_info;
+
 select * from account_info;
 
 -- Step #5 is to go crazy and test for whatever is on your mind :-).

@@ -1,0 +1,97 @@
+body {
+    background-image: url("https://images.pexels.com/photos/4386158/pexels-photo-4386158.jpeg?cs=srgb&dl=pexels-karolina-grabowska-4386158.jpg&fm=jpg");
+}
+
+.maintitle {
+    font-weight: bold;
+    font-size: 30px;
+    width: fit-content;
+    block-size: fit-content;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5em;
+    background-color: #ffff00;
+}
+
+.myimg {
+    width:300px;
+    height:300px;
+    object-fit:cover;
+    border-radius:50%;
+}
+
+P {
+    font-weight: bold;
+    color: white;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 2.5em;
+
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5em;
+    
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5em;
+}
+
+h3 {
+    font-weight: bold;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5em;
+    font-size: 15px;
+
+}
+
+.list {
+    font-weight: bold;
+    color: white;
+    text-align: left;
+    margin: 0px;
+    padding: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #000000;
+    line-height: 2.5em;
+    font-size: 20px;
+    width: fit-content;
+    block-size: fit-content;
+}
+
+.button {
+    font-weight: bold;
+    font-size: 25px;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5em;
+    background-color: rgb(255, 251, 0);
+    margin: 10px;
+    cursor: pointer;
+}
+
+.button:hover {
+    color: #ffff00;
+    background-color: #000000;
+}
+
+.myimg{
+	filter: blur(50px);
+	transition: .9s ease-in-out;
+}
+.myimg:hover {
+	filter: blur(0);
+}
