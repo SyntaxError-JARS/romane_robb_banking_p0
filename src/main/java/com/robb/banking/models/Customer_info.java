@@ -90,7 +90,7 @@ public class Customer_info {
                 .append(last_name).append(",")
                 .append(email).append(",")
                 .append(password).append(",")
-                .append(date_of_birth).append(",");
+                .append(date_of_birth);
 
         return mutableString.toString();
     }
@@ -100,11 +100,11 @@ public class Customer_info {
     @Override
     public String toString() {
         return "Customer_info{" +
-                "first_name='" + first_name + '\'' +
-                ", last_name='" + last_name + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", date_of_birth='" + date_of_birth + '\'' +
+                "first_name='" + first_name + '\n' +
+                ", last_name='" + last_name + '\n' +
+                ", email='" + email + '\n' +
+                ", password='" + password + '\n' +
+                ", date_of_birth='" + date_of_birth + '\n' +
                 '}';
 
     }

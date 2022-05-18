@@ -23,9 +23,9 @@ public class Account_infoDao implements Crudable<Account_info> {
             PreparedStatement ps = conn.prepareStatement(sql);
 
             ps.setString(1, newAccount_info.getAccount_number());
-            ps.setInt(2, newAccount_info.getAccount_balance());
+            ps.setDouble(2, newAccount_info.getAccount_balance());
             ps.setString(3, newAccount_info.getAccount_type());
-            ps.setString(4, newAccount_info.getUser_email());
+            ps.setString(4, newAccount_info.getEmail());
             ps.setString(5, newAccount_info.getMemo());
 
             int checkInsert = ps.executeUpdate();
@@ -57,7 +57,7 @@ public class Account_infoDao implements Crudable<Account_info> {
                 account_info.setAccount_number(rs.getString("Account_number"));
                 account_info.setAccount_balance(rs.getInt("Account_balance"));
                 account_info.setAccount_type(rs.getString("Account_type"));
-                account_info.setUser_email(rs.getString("User_email"));
+                account_info.setEmail(rs.getString("Email"));
                 account_info.setMemo(rs.getString("Memo"));
 
                 account_infos.add(account_info);
@@ -95,7 +95,7 @@ public class Account_infoDao implements Crudable<Account_info> {
             account_info.setAccount_number(rs.getString("Account_number"));
             account_info.setAccount_balance(rs.getInt("Account_balance"));
             account_info.setAccount_type(rs.getString("Account_type"));
-            account_info.setUser_email(rs.getString("User_email"));
+            account_info.setEmail(rs.getString("Email"));
             account_info.setMemo(rs.getString("Memo"));
 
             return account_info;

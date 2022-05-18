@@ -5,82 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6466ccb-70c3-464c-bd3e-54dfc2a29a28" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/robb/banking/daos/Account_infoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/robb/banking/daos/Account_infoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/robb/banking/daos/Crudable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/robb/banking/daos/Crudable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/robb/banking/daos/Customer_infoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/robb/banking/daos/Customer_infoDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/robb/banking/models/Account_info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/robb/banking/models/Account_info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/robb/banking/models/Customer_info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/robb/banking/models/Customer_info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/robb/banking/services/Account_infoServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/robb/banking/services/Account_infoServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/robb/banking/services/Customer_infoServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/robb/banking/services/Customer_infoServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/robb/banking/services/Serviceable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/robb/banking/services/Serviceable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/robb/banking/web/servlets/Account_infoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/robb/banking/web/servlets/Account_infoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/robb/banking/web/servlets/AuthServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/robb/banking/web/servlets/AuthServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/robb/banking/web/servlets/Customer_infoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/robb/banking/web/servlets/Customer_infoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/robb/banking/web/util/ContextLoaderListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/robb/banking/web/util/ContextLoaderListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/robb_banking_customers.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/robb_banking_customers.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT.war" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/Banking Template 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/Banking Template 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/Custom table.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/banking.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/daos/Account_infoDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/daos/Crudable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/daos/Customer_infoDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/exceptions/AuthenticationException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/exceptions/InvalidRequestException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/exceptions/ResourcePersistanceException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/models/Account_info.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/models/Customer_info.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/services/Account_infoServices.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/services/Customer_infoServices.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/services/Serviceable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/util/ConnectionFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/util/logging/Logger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/web/dto/LoginCreds.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/web/servlets/Account_infoServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/web/servlets/AuthServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/web/servlets/Authable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/web/servlets/Customer_infoServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/web/servlets/TestServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/com/robb/banking/web/util/ContextLoaderListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/db.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/robb_banking_customers.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/classes/romane_robb_banking_p0.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/lib/checker-qual-3.5.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/lib/jackson-annotations-2.13.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/lib/jackson-core-2.13.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/lib/jackson-databind-2.13.2.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/lib/postgresql-42.3.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/banking-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/robb/banking/daos/Account_infoDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/robb/banking/daos/Crudable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/robb/banking/daos/Customer_infoDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/robb/banking/exceptions/AuthenticationException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/robb/banking/exceptions/InvalidRequestException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/robb/banking/exceptions/ResourcePersistanceException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/robb/banking/models/Account_info.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/robb/banking/models/Customer_info.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/robb/banking/services/Account_infoServices.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/robb/banking/services/Customer_infoServices.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/robb/banking/services/Serviceable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/robb/banking/util/ConnectionFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/robb/banking/util/logging/Logger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/robb/banking/web/dto/LoginCreds.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/robb/banking/web/servlets/Account_infoServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/robb/banking/web/servlets/AuthServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/robb/banking/web/servlets/Authable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/robb/banking/web/servlets/Customer_infoServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/robb/banking/web/servlets/TestServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/robb/banking/web/util/ContextLoaderListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/robb_banking_customers.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/robb_banking_customers.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/robb/banking/services/Customer_infoServiceTestSuite.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/robb/banking/util/ConnectionFactoryTestSuite.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,6 +58,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",

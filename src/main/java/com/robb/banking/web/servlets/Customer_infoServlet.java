@@ -47,7 +47,7 @@ public class Customer_infoServlet extends HttpServlet implements Authable {
             Customer_info customer_info;
             try {
                 customer_info = customer_infoServices.readByEmail(req.getParameter("email"));
-                resp.getWriter().write("You have the following email ");
+                resp.getWriter().write("This customer matches the email address provided: \n");
             } catch (ResourcePersistanceException e) {
                 logger.warn(e.getMessage());
                 resp.setStatus(404);
@@ -70,6 +70,13 @@ public class Customer_infoServlet extends HttpServlet implements Authable {
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    }
+
+    @Override
+    protected void doDelete (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
+    {
+
 
     }
 

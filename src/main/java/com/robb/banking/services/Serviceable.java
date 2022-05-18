@@ -19,4 +19,8 @@ public interface Serviceable<T> {
     boolean validateInput(T object);
 
     Account_info readbyEmail(String id);
+
+    Account_info update(Account_infoServices account_infoUpdate);
+
+    Account_info readById(String id);
 }

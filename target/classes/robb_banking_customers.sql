@@ -23,16 +23,16 @@ drop table if exists account_info;
 create table account_info (
 	id serial primary key,
 	"account_number" varchar(10),
-	"account_balance" int not null,
+	"account_balance" decimal(9, 2) not null,
 	"account_type" varchar(10) not null,
-	"user_email" varchar(100) not null,
+	"email" varchar(100) not null,
 	"memo" varchar(100) not null
 );
 
 -- Linking Tables in SQL
 alter table account_info
-add constraint fk_user_email
-foreign key(user_email) references customer_info(email);
+add constraint fk_email
+foreign key(email) references customer_info(email);
 
 -- Step #3 is to insert data into your table. This part is incredibly tedious without something like Mockaroo :-).
 

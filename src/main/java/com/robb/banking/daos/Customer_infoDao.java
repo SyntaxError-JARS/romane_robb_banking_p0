@@ -1,5 +1,6 @@
 package com.robb.banking.daos;
 
+import com.robb.banking.models.Account_info;
 import com.robb.banking.models.Customer_info;
 import com.robb.banking.util.ConnectionFactory;
 import com.robb.banking.util.logging.Logger;
@@ -115,6 +116,11 @@ public class Customer_infoDao implements Crudable<Customer_info> {
             e.printStackTrace();
             return null;
         }
+    }
+
+    @Override
+    public Account_info findById(String id) {
+        return null;
     }
 
     @Override

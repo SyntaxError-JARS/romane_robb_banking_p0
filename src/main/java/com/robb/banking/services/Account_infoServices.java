@@ -4,12 +4,14 @@ import com.robb.banking.daos.Account_infoDao;
 import com.robb.banking.exceptions.InvalidRequestException;
 import com.robb.banking.models.Account_info;
 import com.robb.banking.util.logging.Logger;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.*;
 
 public class Account_infoServices implements Serviceable<Account_info> {
+
+    private final Logger logger = Logger.getLogger();
 
   private static Account_infoDao account_infoDao;
 
@@ -110,7 +112,7 @@ public class Account_infoServices implements Serviceable<Account_info> {
 
         //Account_info account_info;
         if (Integer.parseInt(deposit) < 0 || deposit.equals("")) return false;
-        if (Account_info.getAccount_balance()- Integer.parseInt(deposit) < 0) return false;
+        //if (Account_info.getAccount_balance()- Integer.parseInt(deposit) < 0) return false;
 
         return true;
     }
@@ -132,9 +134,21 @@ public class Account_infoServices implements Serviceable<Account_info> {
     }
 
     @Override
-    public Account_info update(Account_info updateObject) {
-        return null;
+    public Account_info update(Account_info updatedAccount_info) {
+        logger.info("User trying to update: " + updatedAccount_info);
+        if(!validateInput(updatedAccount_info)){
+            throw new InvalidRequestException("Account was not validated.");
+        }
+        if(validateEmailNotUsed(updatedAccount_info.getEmail())){
+            throw new InvalidRequestException("User id is already in use. Please try again with another email or login into previously made account.");
+        }
+
+        Account_info persistedAccount = account_infoDao.create(updatedAccount_info);
+
+        logger.info("Account has been persisted: " + updatedAccount_info);
+        return updatedAccount_info;
     }
+
 
     @Override
     public boolean delete(String id) {
@@ -148,6 +162,16 @@ public class Account_infoServices implements Serviceable<Account_info> {
 
     @Override
     public Account_info readbyEmail(String id) {
+        return null;
+    }
+
+    @Override
+    public Account_info update(Account_infoServices account_infoUpdate) {
+        return null;
+    }
+
+    @Override
+    public Account_info readById(String id) {
         return null;
     }
 }

@@ -95,6 +95,16 @@ public class Customer_infoServices implements Serviceable<Customer_info> {
         return null;
     }
 
+    @Override
+    public Account_info update(Account_infoServices account_infoUpdate) {
+        return null;
+    }
+
+    @Override
+    public Account_info readById(String id) {
+        return null;
+    }
+
     public Customer_info authenticateCustomer_info(String email, String password) {
 
         if (email == null || email.trim().equals("") || password == null || password.trim().equals("")) {
