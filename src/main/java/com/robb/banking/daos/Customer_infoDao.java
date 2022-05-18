@@ -7,7 +7,6 @@ import com.robb.banking.exceptions.ResourcePersistanceException;
 
 import java.io.IOException;
 import java.sql.*;
-import java.io.*;
 import java.util.Arrays;
 import java.util.List;
 
@@ -37,7 +36,7 @@ public class Customer_infoDao implements Crudable<Customer_info> {
             int checkInsert = ps.executeUpdate();
 
             if (checkInsert == 0) {
-                throw new ResourcePersistanceException("The User was not entered into the database due to some issue.");
+                throw new ResourcePersistanceException("The customer_info was not entered into the database due to some issue.");
             }
 
         } catch (SQLException | RuntimeException e) {
@@ -60,7 +59,7 @@ public class Customer_infoDao implements Crudable<Customer_info> {
             String sql = "select * from customer_info";
             Statement s = conn.createStatement();
 
-            ResultSet rs = ((Statement) s).executeQuery(sql);
+            ResultSet rs = s.executeQuery(sql);
 
             while (rs.next()) {
                 Customer_info customer_info = new Customer_info();
@@ -81,25 +80,25 @@ public class Customer_infoDao implements Crudable<Customer_info> {
             return null;
         }
 
-        System.out.println("Returning customer information to user.");
+        System.out.println("Returning customer information to customer.");
         return Arrays.asList(customer_infos);
     }
 
     @Override
-    public Customer_info findById(String id) {
+    public Customer_info findByEmail(String email) {
 
         try (Connection conn = ConnectionFactory.getInstance().getConnection();) {
 
-            String sql = "select * from Customer Info where email = ?";
+            String sql = "select * from customer_info where email = ?";
 
             PreparedStatement ps = conn.prepareStatement(sql);
 
-            ps.setInt(1, Integer.parseInt(id));
+            ps.setString(1, email);
 
             ResultSet rs = ps.executeQuery();
 
             if (!rs.next()) {
-                return null;
+                throw new ResourcePersistanceException("This user was not found in our database.");
             }
 
             Customer_info customer_info = new Customer_info();
@@ -107,7 +106,7 @@ public class Customer_infoDao implements Crudable<Customer_info> {
             customer_info.setFirst_name(rs.getString("first_name"));
             customer_info.setLast_name(rs.getString("last_name"));
             customer_info.setEmail(rs.getString("email"));
-            customer_info.setPassword(rs.getString("usePassword"));
+            customer_info.setPassword(rs.getString("password"));
             customer_info.setDate_of_birth(rs.getString("date_of_birth"));
 
             return customer_info;
@@ -124,7 +123,7 @@ public class Customer_infoDao implements Crudable<Customer_info> {
     }
 
     @Override
-    public boolean delete(String id) {
+    public boolean delete(String email) {
         return false;
     }
 
@@ -161,7 +160,7 @@ public class Customer_infoDao implements Crudable<Customer_info> {
         public boolean checkEmail (String email){
 
             try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
-                String sql = "select email from user where email = ?";
+                String sql = "select email from customer_info where email = ?";
                 PreparedStatement ps = conn.prepareStatement(sql);
                 ps.setString(1, email);
 

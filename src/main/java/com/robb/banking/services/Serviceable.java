@@ -10,7 +10,7 @@ public interface Serviceable<T> {
     T create(T newObject);
 
     List<T> readAll();
-    T readById(String id);
+    T readByEmail(String id);
 
     T update(T updateObject);
 
@@ -18,5 +18,5 @@ public interface Serviceable<T> {
 
     boolean validateInput(T object);
 
-    Account_info readbyID(String id);
+    Account_info readbyEmail(String id);
 }

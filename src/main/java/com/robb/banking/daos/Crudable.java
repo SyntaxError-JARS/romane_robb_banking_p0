@@ -1,5 +1,8 @@
 package com.robb.banking.daos;
 
+import com.robb.banking.models.Account_info;
+import com.robb.banking.models.Customer_info;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
@@ -14,7 +17,10 @@ public interface Crudable<T> {
 
     // Read
     List<T> findAll() throws IOException;
-    T findById(String id);
+
+    T findByEmail(String email);
+
+    Account_info findById(String id);
 
     // Update
     public boolean update(T updatedObj);

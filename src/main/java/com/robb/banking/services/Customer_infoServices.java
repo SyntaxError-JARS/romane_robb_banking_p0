@@ -37,9 +37,9 @@ public class Customer_infoServices implements Serviceable<Customer_info> {
     }
 
     @Override
-    public Customer_info readById(String id) throws ResourcePersistanceException {
+    public Customer_info readByEmail(String email) throws ResourcePersistanceException {
 
-        Customer_info customer_info = customer_infoDao.findById(id);
+        Customer_info customer_info = customer_infoDao.findByEmail(email);
         return customer_info;
     }
 
@@ -91,7 +91,7 @@ public class Customer_infoServices implements Serviceable<Customer_info> {
     }
 
     @Override
-    public Account_info readbyID(String id) {
+    public Account_info readbyEmail(String email) {
         return null;
     }
 

@@ -4,6 +4,7 @@ import com.robb.banking.exceptions.ResourcePersistanceException;
 import com.robb.banking.models.Account_info;
 import com.robb.banking.util.ConnectionFactory;
 import com.robb.banking.util.logging.Logger;
+
 import java.io.IOException;
 import java.sql.*;
 import java.util.List;
@@ -17,7 +18,7 @@ public class Account_infoDao implements Crudable<Account_info> {
     public Account_info create(Account_info newAccount_info) {
         try (Connection conn = ConnectionFactory.getInstance().getConnection();) {
 
-            String sql = "insert into account info values (default, ?, ?, ?, ?, ?";
+            String sql = "insert into account_info values (default, ?, ?, ?, ?, ?";
 
             PreparedStatement ps = conn.prepareStatement(sql);
 
@@ -45,7 +46,7 @@ public class Account_infoDao implements Crudable<Account_info> {
 
         try (Connection conn = ConnectionFactory.getInstance().getConnection();) {
 
-            String sql = "select * from Account info";
+            String sql = "select * from account_info";
             Statement s = conn.createStatement();
 
             ResultSet rs = s.executeQuery(sql);
@@ -70,6 +71,11 @@ public class Account_infoDao implements Crudable<Account_info> {
     }
 
     @Override
+    public Account_info findByEmail(String email) {
+        return null;
+    }
+
+    @Override
     public Account_info findById(String id) {
         try (Connection conn = ConnectionFactory.getInstance().getConnection();) {
 
@@ -80,7 +86,7 @@ public class Account_infoDao implements Crudable<Account_info> {
 
             ResultSet rs = ps.executeQuery();
 
-            if(!rs.next()){
+            if (!rs.next()) {
                 throw new ResourcePersistanceException("Account_info was not found in the database. Please check ID entered was correct.");
             }
 
@@ -100,8 +106,79 @@ public class Account_infoDao implements Crudable<Account_info> {
     }
 
     @Override
-    public boolean update(Account_info updatedAccount_info) { return false; }
+    public boolean update(Account_info updatedAccount_info) {
+        return false;
+    }
 
     @Override
-    public boolean delete(String id) { return false; }
+    public boolean delete(String id) {
+
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+            String sql = "delete from account_info where id = ?";
+
+            PreparedStatement ps = conn.prepareStatement(sql);
+
+            ps.setString(1, id);
+
+
+            ps.executeUpdate();
+
+            return true;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+
+public Account_info deposit(String deposit,String id){
+
+
+        try(Connection conn=ConnectionFactory.getInstance().getConnection()){
+
+        String sql="update account_info set account_balance = account_balance + ? where id = ?";
+
+        PreparedStatement ps=conn.prepareStatement(sql);
+
+        ps.setInt(1,Integer.parseInt(deposit));
+        ps.setInt(2,Integer.parseInt(id));
+
+
+        ps.executeUpdate();
+
+
+        }catch(SQLException e){
+        e.printStackTrace();
+
+        }
+        return findById(id);
+
+        }
+
+public Account_info withdraw(String deposit,String id){
+
+        try(Connection conn=ConnectionFactory.getInstance().getConnection()){
+
+        String sql="update account_info set account_balance = account_balance - ? where id = ?";
+
+        PreparedStatement ps=conn.prepareStatement(sql);
+
+        ps.setInt(1,Integer.parseInt(deposit));
+        ps.setInt(2,Integer.parseInt(id));
+
+        ps.executeUpdate();
+
+
+        return findById(id);
+        }catch(SQLException e){
+        e.printStackTrace();
+        return null;
+        }
+
+    }
+
+    public boolean update(String id2, String newBankAccountName) {
+        return false;
+    }
 }

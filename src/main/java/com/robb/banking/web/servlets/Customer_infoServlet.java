@@ -38,15 +38,16 @@ public class Customer_infoServlet extends HttpServlet implements Authable {
 
         if (!checkAuth(req, resp)) return;
 
-        if (req.getParameter("id") != null && req.getParameter("email") != null) {
-            resp.getWriter().write("Hey you have the follow id and email " + req.getParameter("id") + " " + req.getParameter("email"));
-            return;
-        }
+//        if (req.getParameter("email") != null && req.getParameter("email") != null) {
+//            resp.getWriter().write("You have the following email " + req.getParameter("email"));
+//            return;
+//        }
 
-        if (req.getParameter("id") != null) {
+        if (req.getParameter("email") != null) {
             Customer_info customer_info;
             try {
-                customer_info = customer_infoServices.readById(req.getParameter("id"));
+                customer_info = customer_infoServices.readByEmail(req.getParameter("email"));
+                resp.getWriter().write("You have the following email ");
             } catch (ResourcePersistanceException e) {
                 logger.warn(e.getMessage());
                 resp.setStatus(404);
@@ -62,6 +63,7 @@ public class Customer_infoServlet extends HttpServlet implements Authable {
 
         String payload = mapper.writeValueAsString(customer_infos);
 
+
         resp.getWriter().write(payload);
 
     }
@@ -69,12 +71,11 @@ public class Customer_infoServlet extends HttpServlet implements Authable {
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-
     }
 
     protected boolean checkAuth(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         HttpSession httpSession = req.getSession();
-        if (httpSession.getAttribute("authUser") == null) {
+        if (httpSession.getAttribute("authCustomer_info") == null) {
             resp.getWriter().write("Unauthorized request. You are not logged in as a registered user.");
             resp.setStatus(401);
             return false;

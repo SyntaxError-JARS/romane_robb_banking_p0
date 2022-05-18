@@ -7,7 +7,7 @@ import java.io.IOException;
 // The use of the public class is to make the Account_info class accessible and visible to all other classes.
 public class Account_info {
     private String account_number;
-    private int account_balance;
+    private static int account_balance;
     private String account_type;
     private String user_email;
     private String memo;
@@ -28,13 +28,14 @@ public class Account_info {
         this.memo = memo;
     }
 
+
 // public makes the class accessible and visible to all other classes.
 // void means that this method does not have a return value.
     public String getAccount_number() { return account_number; }
 
     public void setAccount_number (String getAccount_number) { this.account_number = account_number; }
 
-    public int getAccount_balance() { return account_balance; }
+    public static int getAccount_balance() { return account_balance; }
 
     public void setAccount_balance(int setAccount_balance) { this.account_balance = account_balance; }
 
