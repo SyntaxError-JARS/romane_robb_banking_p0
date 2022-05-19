@@ -11,22 +11,23 @@ create schema romane_robb_p0;
 drop table if exists customer_info;
 
 create table customer_info (
-	"first_name" varchar(20) not null,
-	"last_name" varchar(20) not null,
-	"email" varchar(40) primary key,
+	first_name varchar(20) not null,
+	last_name varchar(20) not null,
+	email varchar(40) primary key,
 	"password" varchar(10) not null,
-	"date_of_birth" varchar(20) not null
+	date_of_birth varchar(20) not null
 );
 
 drop table if exists account_info;
 
 create table account_info (
 	id serial primary key,
-	"account_number" varchar(10),
-	"account_balance" decimal(9, 2) not null,
-	"account_type" varchar(10) not null,
-	"email" varchar(100) not null,
-	"memo" varchar(100) not null
+	account_number varchar(10) not null,
+	account_balance int not null,
+	account_type varchar(10) not null,
+	email varchar(100) not null unique,
+	memo varchar(100) not null,
+	constraint fk_customer_info foreign key(email) references customer_info(email)
 );
 
 -- Linking Tables in SQL
@@ -34,7 +35,7 @@ alter table account_info
 add constraint fk_email
 foreign key(email) references customer_info(email);
 
--- Step #3 is to insert data into your table. This part is incredibly tedious without something like Mockaroo :-).
+-- Step #3 is to insert data into your table.
 
 insert into customer_info values ('Megan', 'Lewis', 'meganlewis@gmail.com', '783254@', '1/26/1987');
 insert into customer_info values ('Romane', 'Robb', 'robb@mail.com', 'password', '1/27/1901');

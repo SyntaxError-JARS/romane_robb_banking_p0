@@ -12,6 +12,8 @@ public interface Serviceable<T> {
     List<T> readAll();
     T readByEmail(String id);
 
+    Account_info findbyId(String id);
+
     T update(T updateObject);
 
     boolean delete(String id);
@@ -21,6 +23,8 @@ public interface Serviceable<T> {
     Account_info readbyEmail(String id);
 
     Account_info update(Account_infoServices account_infoUpdate);
+
+    Account_info findById(String id);
 
     Account_info readById(String id);
 }

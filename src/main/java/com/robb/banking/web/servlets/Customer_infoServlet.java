@@ -34,7 +34,24 @@ public class Customer_infoServlet extends HttpServlet implements Authable {
     }
 
     @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        // TODO: Let's create a customer.
+
+        Customer_info newCustomerinfo = mapper.readValue(req.getInputStream(), Customer_info.class); // from JSON to Java Object (User)
+        Customer_info persistedUser = customer_infoServices.create(newCustomerinfo);
+
+        String payload = mapper.writeValueAsString(persistedUser); // Mapping from Java Object (User) to JSON
+
+        resp.getWriter().write("Persisted the provided user as show below \n");
+        resp.getWriter().write(payload);
+        resp.setStatus(201);
+    }
+
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        // TODO: Let's "read" a customer.
 
         if (!checkAuth(req, resp)) return;
 
@@ -71,23 +88,14 @@ public class Customer_infoServlet extends HttpServlet implements Authable {
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        // TODO: Let's update a customer.
+
     }
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {}
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // TODO: Let's create a User
-        Customer_info newCustomerinfo = mapper.readValue(req.getInputStream(), Customer_info.class); // from JSON to Java Object (User)
-        Customer_info persistedUser = customer_infoServices.create(newCustomerinfo);
-
-        String payload = mapper.writeValueAsString(persistedUser); // Mapping from Java Object (User) to JSON
-
-        resp.getWriter().write("Persisted the provided user as show below \n");
-        resp.getWriter().write(payload);
-        resp.setStatus(201);
-    }
+    // TODO: Let's delete a customer.
 
     protected boolean checkAuth(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         HttpSession httpSession = req.getSession();

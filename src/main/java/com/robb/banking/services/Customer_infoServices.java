@@ -42,6 +42,11 @@ public class Customer_infoServices implements Serviceable<Customer_info> {
     }
 
     @Override
+    public Account_info findById(String id) {
+        return null;
+    }
+
+    @Override
     public Customer_info update(Customer_info updateObject) {
         return null;
     }
@@ -86,7 +91,7 @@ public class Customer_infoServices implements Serviceable<Customer_info> {
     }
 
     @Override
-    public Account_info readbyEmail(String email) {
+    public Account_info readbyEmail(String id) {
         return null;
     }
 
@@ -97,6 +102,11 @@ public class Customer_infoServices implements Serviceable<Customer_info> {
 
     @Override
     public Account_info readById(String id) {
+        return null;
+    }
+
+    @Override
+    public Account_info findbyId(String id) {
         return null;
     }
 

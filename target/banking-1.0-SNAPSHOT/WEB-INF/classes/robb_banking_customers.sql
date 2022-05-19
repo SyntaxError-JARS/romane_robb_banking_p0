@@ -22,7 +22,7 @@ drop table if exists account_info;
 
 create table account_info (
 	id serial primary key,
-	"account_number" varchar(10),
+	"account_number" varchar(10), not null,
 	"account_balance" decimal(9, 2) not null,
 	"account_type" varchar(10) not null,
 	"email" varchar(100) not null,

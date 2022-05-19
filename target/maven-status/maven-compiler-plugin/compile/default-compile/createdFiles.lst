@@ -18,3 +18,4 @@ com\robb\banking\exceptions\InvalidRequestException.class
 com\robb\banking\web\servlets\Authable.class
 com\robb\banking\web\servlets\TestServlet.class
 com\robb\banking\web\servlets\Customer_infoServlet.class
+com\robb\banking\web\servlets\DepositsServlet.class
